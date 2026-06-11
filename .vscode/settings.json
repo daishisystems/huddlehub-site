@@ -1,0 +1,7 @@
+{
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "editor.formatOnSave": false,
+  "liveServer.settings.root": "/public",
+  "liveServer.settings.port": 5173
+}

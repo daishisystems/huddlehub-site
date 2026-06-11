@@ -1,0 +1,11 @@
+{
+  "name": "huddlehub-site",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Static website for HuddleHub.",
+  "scripts": {
+    "start": "python3 -m http.server 5173 -d public",
+    "preview": "python3 -m http.server 5173 -d public",
+    "check:size": "du -sh public/index.html"
+  }
+}
