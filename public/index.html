@@ -319,6 +319,7 @@ a.ag:hover{background:rgba(255,255,255,.18)}
 .fsub{width:100%;padding:.95rem;background:var(--orange);color:#fff;border:none;border-radius:50px;font-family:'Exo 2',sans-serif;font-weight:900;font-size:.95rem;transition:background .2s,transform .2s;margin-top:.5rem}
 .fsub:hover{background:#e56800;transform:translateY(-1px)}
 .fn{font-size:.77rem;color:var(--mid);text-align:center;margin-top:.65rem}
+.bot-field{display:none}
 
 /* ── FOOTER ── */
 footer{background:#09094f;padding:3.5rem 2rem 2rem}
@@ -893,7 +894,7 @@ footer{background:#09094f;padding:3.5rem 2rem 2rem}
       <div class="fcard r r2">
         <div class="ft">Register Your Interest</div>
         <div class="fs">Tell us a little about yourself and we'll be in touch.</div>
-        <form name="coach-application" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-success="✓ Application received! We'll be in touch soon." data-success-color="#2a9d5c" onsubmit="handleNetlifyForm(event)">
+        <form name="coach-application" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-success="✓ Application received! We will be in touch soon." data-success-color="#2a9d5c" onsubmit="handleNetlifyForm(event)">
           <input type="hidden" name="form-name" value="coach-application">
           <p class="bot-field"><label>Leave this field empty <input name="bot-field"></label></p>
           <div class="frow">
@@ -998,7 +999,7 @@ footer{background:#09094f;padding:3.5rem 2rem 2rem}
     <div class="fcard r r2">
       <div class="ft">Pre-Register Today</div>
       <div class="fs">No commitment — just let us know you're interested.</div>
-      <form name="pre-registration" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-success="✓ Registered! We'll be in touch soon." data-success-color="#2a9d5c" onsubmit="handleNetlifyForm(event)">
+      <form name="pre-registration" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-success="✓ Registered! We will be in touch soon." data-success-color="#2a9d5c" onsubmit="handleNetlifyForm(event)">
         <input type="hidden" name="form-name" value="pre-registration">
         <p class="bot-field"><label>Leave this field empty <input name="bot-field"></label></p>
         <div class="frow">
