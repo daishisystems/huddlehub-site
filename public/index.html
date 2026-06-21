@@ -16,6 +16,20 @@
 <meta name="twitter:title" content="HuddleHub — Because Real Life is Better Together">
 <meta name="twitter:description" content="Cub Hub and Sports Hub programmes for George families, launching Term 3 2026.">
 <meta name="twitter:image" content="https://www.huddlehub.co.za/assets/images/image-01-fd5f8f7b3591.png">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2001940603748823');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
 <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -894,7 +908,7 @@ footer{background:#09094f;padding:3.5rem 2rem 2rem}
       <div class="fcard r r2">
         <div class="ft">Register Your Interest</div>
         <div class="fs">Tell us a little about yourself and we'll be in touch.</div>
-        <form name="coach-application" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-success="✓ Application received! We will be in touch soon." data-success-color="#2a9d5c" onsubmit="handleNetlifyForm(event)">
+        <form name="coach-application" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-meta-event="Lead" data-success="✓ Application received! We will be in touch soon." data-success-color="#2a9d5c" onsubmit="handleNetlifyForm(event)">
           <input type="hidden" name="form-name" value="coach-application">
           <p class="bot-field"><label>Leave this field empty <input name="bot-field"></label></p>
           <div class="frow">
@@ -999,7 +1013,7 @@ footer{background:#09094f;padding:3.5rem 2rem 2rem}
     <div class="fcard r r2">
       <div class="ft">Pre-Register Today</div>
       <div class="fs">No commitment — just let us know you're interested.</div>
-      <form name="pre-registration" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-success="✓ Registered! We will be in touch soon." data-success-color="#2a9d5c" onsubmit="handleNetlifyForm(event)">
+      <form name="pre-registration" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-meta-event="Lead" data-success="✓ Registered! We will be in touch soon." data-success-color="#2a9d5c" onsubmit="handleNetlifyForm(event)">
         <input type="hidden" name="form-name" value="pre-registration">
         <p class="bot-field"><label>Leave this field empty <input name="bot-field"></label></p>
         <div class="frow">
@@ -1579,6 +1593,7 @@ async function handleNetlifyForm(e){
       body: new URLSearchParams(new FormData(form)).toString()
     });
     if(!response.ok) throw new Error('Form submission failed');
+    trackMetaEvent(form);
     btn.textContent = form.dataset.success || originalText;
     btn.style.background = form.dataset.successColor || '#2a9d5c';
     form.reset();
@@ -1591,6 +1606,11 @@ async function handleNetlifyForm(e){
       btn.disabled = false;
     }, 3500);
   }
+}
+
+function trackMetaEvent(form){
+  if(!form.dataset.metaEvent || typeof fbq !== 'function') return;
+  fbq('track', form.dataset.metaEvent, {content_name: form.name || 'form'});
 }
 </script>
 <script>
