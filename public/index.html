@@ -293,22 +293,24 @@ section{padding:5rem 2rem}
 
 /* ── VENUE ── */
 .venue{background:var(--light)}
-.venue-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-top:3rem}
-.venue-map{border-radius:20px;overflow:hidden;height:280px}
-.venue-map iframe{width:100%;height:100%;border:none}
-.venue-address{display:flex;align-items:flex-start;gap:1rem;margin-top:1.25rem;padding:1.25rem;background:#fff;border-radius:16px;border:1px solid rgba(14,17,100,.08)}
-.va-icon{font-size:1.5rem}
-.va-name{font-family:'Exo 2',sans-serif;font-weight:900;color:var(--navy);font-size:1rem;margin-bottom:.25rem}
-.va-addr{font-size:.87rem;color:var(--mid);line-height:1.6}
-.venue-outdoor{background:#fff;border-radius:20px;padding:1.75rem;border:2px solid rgba(166,204,59,.3)}
-.vo-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(166,204,59,.15);border-radius:50px;padding:.3rem .85rem;font-family:'Exo 2',sans-serif;font-weight:800;font-size:.75rem;color:#5a7a00;margin-bottom:1rem}
-.vo-title{font-family:'Exo 2',sans-serif;font-weight:900;color:var(--navy);font-size:1.1rem;margin-bottom:.5rem}
-.vo-desc{font-size:.9rem;color:var(--mid);line-height:1.7;margin-bottom:1rem}
-.vo-addr{display:flex;align-items:flex-start;gap:.75rem;padding:.9rem 1rem;background:var(--light);border-radius:12px}
-.vo-icon{font-size:1.1rem}
-.vo-addr-text{font-size:.87rem;color:var(--mid);line-height:1.6}
-.tw-explained{margin-top:2rem}
-.tw-explained-title{font-family:'Exo 2',sans-serif;font-weight:800;color:var(--navy);font-size:1rem;margin-bottom:.75rem}
+.venue-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:stretch;margin-top:3rem}
+.venue-card{background:#fff;border-radius:20px;overflow:hidden;display:flex;flex-direction:column;height:100%}
+.vc-indoor{border:2px solid rgba(8,190,183,.3)}
+.vc-outdoor{border:2px solid rgba(166,204,59,.35)}
+.vc-map{height:240px}
+.vc-map iframe{width:100%;height:100%;border:none;display:block}
+.vc-body{display:flex;flex-direction:column;flex:1;padding:1.5rem}
+.vc-badge{display:inline-flex;align-self:flex-start;align-items:center;gap:.5rem;border-radius:50px;padding:.32rem .9rem;font-family:'Exo 2',sans-serif;font-weight:800;font-size:.75rem;letter-spacing:.02em}
+.vc-badge-indoor{background:rgba(8,190,183,.13);color:var(--teal2)}
+.vc-badge-outdoor{background:rgba(166,204,59,.18);color:#5a7a00}
+.vc-name{font-family:'Exo 2',sans-serif;font-weight:900;color:var(--navy);font-size:1.2rem;margin:.7rem 0 .35rem}
+.vc-tag{font-size:.9rem;color:var(--mid);line-height:1.6;margin-bottom:1rem}
+.vc-addr{display:flex;align-items:flex-start;gap:.55rem;font-size:.9rem;color:var(--mid);line-height:1.55;margin-bottom:.7rem}
+.vc-addr .ic,.vc-meta .ic{flex-shrink:0;font-size:1.05rem;line-height:1.4}
+.vc-meta{display:flex;align-items:center;gap:.55rem;margin-top:auto;padding-top:.3rem;font-family:'Exo 2',sans-serif;font-weight:700;font-size:.92rem;color:var(--navy)}
+.vc-meta a{color:var(--teal2);text-decoration:none}
+.tw-explained{margin-top:2.25rem;max-width:660px;margin-left:auto;margin-right:auto}
+.tw-explained-title{font-family:'Exo 2',sans-serif;font-weight:800;color:var(--navy);font-size:1rem;margin-bottom:.85rem;text-align:center}
 .tw-explained-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
 .twe-card{border-radius:14px;padding:1.1rem;display:flex;flex-direction:column;gap:.25rem}
 .twe-indoor{background:var(--navy);color:#fff}
@@ -799,42 +801,43 @@ body.sp-open{overflow:hidden}
       <p class="sec-sub">Sessions take place across two venues in George — one world-class indoor arena for skills and strategy, and a great outdoor space for full-field game play.</p>
     </div>
     <div class="venue-grid r">
-      <div>
-        <div class="venue-map">
+      <div class="venue-card vc-indoor">
+        <div class="vc-map">
           <iframe src="https://www.google.com/maps?q=Triumph%20Indoor%20Sports%20Arena%2C%202%20Ring%20Street%2C%20George%20Industria%2C%20George%2C%206529&z=15&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Triumph Indoor Sports Arena"></iframe>
         </div>
-        <div class="venue-address">
-          <div class="va-icon">📍</div>
-          <div>
-            <div class="va-name">Triumph Indoor Sports Arena — Indoor Sessions</div>
-            <div class="va-addr">2 Ring Street, George Industria, George, 6529 &nbsp;·&nbsp; <a href="tel:+27664391913" style="color:var(--teal);text-decoration:none">066 439 1913</a></div>
-          </div>
+        <div class="vc-body">
+          <div class="vc-badge vc-badge-indoor">🏟 Indoor Sessions</div>
+          <div class="vc-name">Triumph Indoor Sports Arena</div>
+          <div class="vc-tag">A world-class indoor arena for skills, drills and match strategy.</div>
+          <div class="vc-addr"><span class="ic">📍</span><span>2 Ring Street, George Industria, George, 6529</span></div>
+          <div class="vc-meta"><span class="ic">📞</span><a href="tel:+27664391913">066 439 1913</a></div>
         </div>
       </div>
-      <div>
-        <div class="venue-outdoor">
-          <div class="vo-badge">🌿 Outdoor Sessions</div>
-          <div class="vo-title">Carpe Diem School — Outdoor Sessions</div>
-          <p class="vo-desc">Our 4 outdoor sessions per term take place at Carpe Diem School in George, giving children the full-field experience — real distances, real positions, real match conditions. The perfect complement to indoor skills work.</p>
-          <div class="vo-addr">
-            <div class="vo-icon">📍</div>
-            <div class="vo-addr-text">Lang Street, Bos en Dal, George, 6529</div>
-          </div>
+      <div class="venue-card vc-outdoor">
+        <div class="vc-map">
+          <iframe src="https://www.google.com/maps?q=Carpe%20Diem%20School%2C%20Lang%20Street%2C%20Bos%20en%20Dal%2C%20George%2C%206529&z=15&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Carpe Diem School — Outdoor Sessions"></iframe>
         </div>
-        <div class="tw-explained">
-          <div class="tw-explained-title">How the venues work together</div>
-          <div class="tw-explained-grid">
-            <div class="twe-card twe-indoor">
-              <div class="twe-n">6×</div>
-              <div class="twe-label">Indoor · Skills</div>
-              <div class="twe-loc">Triumph Indoor Sports Arena</div>
-            </div>
-            <div class="twe-card twe-outdoor">
-              <div class="twe-n">4×</div>
-              <div class="twe-label">Outdoor · Game Play</div>
-              <div class="twe-loc">Carpe Diem School</div>
-            </div>
-          </div>
+        <div class="vc-body">
+          <div class="vc-badge vc-badge-outdoor">🌿 Outdoor Sessions</div>
+          <div class="vc-name">Carpe Diem School</div>
+          <div class="vc-tag">Full-field game play — real distances, real positions, real match conditions.</div>
+          <div class="vc-addr"><span class="ic">📍</span><span>Lang Street, Bos en Dal, George, 6529</span></div>
+          <div class="vc-meta"><span class="ic">📅</span>4 outdoor sessions per term</div>
+        </div>
+      </div>
+    </div>
+    <div class="tw-explained r">
+      <div class="tw-explained-title">How the venues work together</div>
+      <div class="tw-explained-grid">
+        <div class="twe-card twe-indoor">
+          <div class="twe-n">6×</div>
+          <div class="twe-label">Indoor · Skills</div>
+          <div class="twe-loc">Triumph Indoor Sports Arena</div>
+        </div>
+        <div class="twe-card twe-outdoor">
+          <div class="twe-n">4×</div>
+          <div class="twe-label">Outdoor · Game Play</div>
+          <div class="twe-loc">Carpe Diem School</div>
         </div>
       </div>
     </div>
