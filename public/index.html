@@ -50,7 +50,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(14,17,100,0.
 .nav-links a:hover{color:var(--teal)}
 .nav-cta{background:var(--orange);color:#fff !important;padding:0.5rem 1.3rem;border-radius:50px;transition:background .2s !important;box-shadow:0 2px 12px rgba(255,118,0,0.35)}
 .nav-cta:hover{background:#e56800 !important}
-.hamburger{display:none;flex-direction:column;gap:5px;padding:4px;background:none;border:none;cursor:pointer}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:4px}
 .hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
 .mob{display:none;position:fixed;top:68px;left:0;right:0;background:var(--navy);padding:1.5rem 2rem;z-index:99;flex-direction:column;gap:1.25rem;border-top:1px solid rgba(255,255,255,0.08)}
 .mob.open{display:flex}
@@ -58,203 +58,75 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(14,17,100,0.
 .mob .mc{background:var(--orange);color:#fff;padding:.75rem 1.5rem;border-radius:50px;text-align:center;margin-top:.5rem}
 
 /* ── HERO ── */
-.hero{min-height:100vh;background:var(--navy);display:flex;flex-direction:column;justify-content:center;padding:5rem 2rem 3rem;position:relative;overflow:hidden}
+.hero{min-height:100vh;background:var(--navy);display:flex;flex-direction:column;justify-content:center;padding:5rem 2rem 0;position:relative;overflow:hidden}
 .hero-bg{position:absolute;inset:0;pointer-events:none}
-.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:0.18;position:absolute;inset:0}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(14,17,100,0.92) 0%,rgba(14,17,100,0.75) 50%,rgba(8,190,183,0.15) 100%)}
 .hero-blob1{position:absolute;top:-20%;right:-15%;width:680px;height:680px;background:radial-gradient(circle,rgba(8,190,183,0.14) 0%,transparent 65%)}
 .hero-blob2{position:absolute;bottom:-30%;left:-10%;width:520px;height:520px;background:radial-gradient(circle,rgba(255,118,0,0.11) 0%,transparent 65%)}
-.hero-inner{max-width:760px;margin:0 auto;text-align:center;position:relative;z-index:1}
-.hero-eyebrow{font-family:'Exo 2',sans-serif;font-size:0.82rem;font-weight:800;color:var(--teal);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:1.25rem;display:flex;align-items:center;justify-content:center;gap:0.6rem}
-.hero-eyebrow::before,.hero-eyebrow::after{content:'';width:28px;height:2px;background:var(--teal);border-radius:2px;flex-shrink:0}
-.hero-tagline{font-family:'Exo 2',sans-serif;font-size:3.8rem;font-weight:900;color:#fff;line-height:1.06;margin-bottom:0.5rem;letter-spacing:-0.02em;font-style:italic}
+.hero-blob3{position:absolute;top:40%;left:30%;width:300px;height:300px;background:radial-gradient(circle,rgba(166,204,59,0.06) 0%,transparent 65%)}
+.hero-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;width:100%;position:relative;z-index:1;padding-bottom:3rem}
+.hero-logo img{width:100%;max-width:520px;height:auto;filter:drop-shadow(0 24px 80px rgba(8,190,183,0.2))}
+.hero-logo{display:flex;justify-content:center;align-items:center}
+.hero-eyebrow{font-family:'Exo 2',sans-serif;font-size:0.82rem;font-weight:800;color:var(--teal);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:1.1rem;display:flex;align-items:center;gap:0.6rem}
+.hero-eyebrow::before{content:'';width:28px;height:2px;background:var(--teal);border-radius:2px;flex-shrink:0}
+.hero-tagline{font-family:'Exo 2',sans-serif;font-size:4rem;font-weight:900;color:#fff;line-height:1.05;margin-bottom:0.6rem;letter-spacing:-0.03em}
 .hero-tagline .accent{color:var(--orange)}
-.hero-tagline .accent2{color:var(--teal)}
-.hero-because{font-family:'Exo 2',sans-serif;font-size:1.2rem;font-weight:800;color:rgba(255,255,255,0.75);margin-bottom:1.5rem;letter-spacing:0.04em}
-.hero-sub{color:rgba(255,255,255,0.72);font-size:1.05rem;line-height:1.8;margin-bottom:2rem;max-width:560px;margin-left:auto;margin-right:auto}
-.hero-acts{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:center;margin-bottom:1.5rem}
+.hero-because{font-family:'Exo 2',sans-serif;font-size:1.6rem;font-weight:900;color:var(--orange);margin-bottom:1.5rem;line-height:1.3}
+.hero-sub{color:rgba(255,255,255,0.68);font-size:1rem;line-height:1.8;margin-bottom:2rem;max-width:480px}
+.hero-acts{display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
 .btn-prim{background:var(--orange);color:#fff;padding:.9rem 2rem;border-radius:50px;font-family:'Exo 2',sans-serif;font-weight:800;font-size:0.97rem;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(255,118,0,.35)}
 .btn-prim:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,118,0,.45)}
-.btn-sec{color:rgba(255,255,255,.85);padding:.9rem 2rem;border-radius:50px;font-family:'Exo 2',sans-serif;font-weight:700;font-size:0.97rem;text-decoration:none;display:inline-block;border:2px solid rgba(255,255,255,.25);transition:border-color .2s,background .2s,color .2s}
+.btn-sec{color:rgba(255,255,255,.85);padding:.9rem 2rem;border-radius:50px;font-family:'Exo 2',sans-serif;font-weight:700;font-size:0.97rem;text-decoration:none;display:inline-block;border:2px solid rgba(255,255,255,.2);transition:border-color .2s,background .2s,color .2s}
 .btn-sec:hover{border-color:var(--teal);background:rgba(8,190,183,.1);color:#fff}
-.hero-urgency{display:inline-flex;align-items:center;gap:0.85rem;background:rgba(255,118,0,0.12);border:1px solid rgba(255,118,0,0.3);border-radius:12px;padding:0.75rem 1.25rem}
-.hu-pulse{width:10px;height:10px;border-radius:50%;background:var(--orange);flex-shrink:0;animation:pulse-dot 2s ease-in-out infinite}
-@keyframes pulse-dot{0%{box-shadow:0 0 0 0 rgba(255,118,0,0.5)}70%{box-shadow:0 0 0 8px rgba(255,118,0,0)}100%{box-shadow:0 0 0 0 rgba(255,118,0,0)}}
-.hu-text{font-size:0.87rem;color:rgba(255,255,255,0.85)}
-.hu-bold{font-family:'Exo 2',sans-serif;font-weight:800;color:#fff}
-.hu-link{color:var(--orange);font-family:'Exo 2',sans-serif;font-weight:800;font-size:0.87rem;text-decoration:none;margin-left:0.5rem}
-.stat-row{display:flex;gap:3rem;justify-content:center;margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)}
-.stat-n{font-family:'Exo 2',sans-serif;font-size:2rem;font-weight:900;color:var(--teal);line-height:1}
+.stat-row{display:flex;gap:2.5rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.09)}
+.stat-n{font-family:'Exo 2',sans-serif;font-size:1.9rem;font-weight:900;color:var(--teal);line-height:1}
 .stat-l{font-size:.74rem;color:rgba(255,255,255,.5);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-top:.25rem}
 
+/* ── PHOTO STRIP ── */
+.photo-strip{background:var(--navy);padding:0 2rem 3rem;position:relative;z-index:1}
+.ps-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:.875rem}
+.photo-slot{border-radius:14px;overflow:hidden;aspect-ratio:4/3;position:relative;background:rgba(255,255,255,.05);border:1.5px dashed rgba(8,190,183,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;transition:border-color .2s,background .2s}
+.photo-slot:hover{border-color:var(--teal);background:rgba(8,190,183,.07)}
+.photo-slot img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.ps-lbl{font-family:'Exo 2',sans-serif;font-size:.7rem;font-weight:700;color:rgba(255,255,255,.35);text-align:center;letter-spacing:.06em;text-transform:uppercase;z-index:1}
+.ps-ico{font-size:1.35rem;opacity:.3;z-index:1}
+
 /* ── SECTION BASE ── */
-section{padding:5rem 2rem}
+section{padding:5.5rem 2rem}
 .wrap{max-width:1160px;margin:0 auto}
 .sec-eye{font-family:'Exo 2',sans-serif;font-size:.78rem;font-weight:800;color:var(--orange);letter-spacing:.16em;text-transform:uppercase;margin-bottom:.7rem;display:flex;align-items:center;gap:.55rem}
 .sec-eye::before{content:'';width:22px;height:2px;background:var(--orange);border-radius:2px}
-.sec-title{font-family:'Exo 2',sans-serif;font-size:2.3rem;font-weight:900;color:var(--navy);line-height:1.15;margin-bottom:1rem;letter-spacing:-0.01em}
+.sec-title{font-family:'Exo 2',sans-serif;font-size:2.6rem;font-weight:900;color:var(--navy);line-height:1.1;margin-bottom:1rem;letter-spacing:-0.02em}
 .sec-sub{color:var(--mid);font-size:1rem;line-height:1.8;max-width:580px}
 
-/* ── WHO WE ARE ── */
+/* ── WHO ARE WE ── */
 .who{background:var(--light)}
-.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:3rem}
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:3.5rem}
 .who-text p{color:var(--mid);font-size:1rem;line-height:1.85;margin-bottom:1.25rem}
+.who-text p:last-child{margin-bottom:0}
 .tribe-list{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.75rem}
 .tribe-list li{display:flex;align-items:center;gap:.85rem;font-family:'Exo 2',sans-serif;font-weight:700;color:var(--navy);font-size:1rem}
 .tribe-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
 .td-t{background:var(--teal)}.td-o{background:var(--orange)}.td-l{background:var(--lime)}.td-p{background:var(--peach)}
-.because-block{background:var(--navy);border-radius:24px;padding:2.5rem;position:relative;overflow:hidden}
+.because-block{background:var(--navy);border-radius:24px;padding:2.5rem;position:relative;overflow:hidden;margin-top:.5rem}
 .because-block::before{content:'';position:absolute;top:-40%;right:-20%;width:300px;height:300px;background:radial-gradient(circle,rgba(8,190,183,.18) 0%,transparent 65%)}
 .because-text{font-family:'Exo 2',sans-serif;font-weight:900;font-size:1.75rem;color:#fff;line-height:1.25;position:relative;z-index:1;margin-bottom:.75rem}
 .because-text span{color:var(--teal)}
 .because-sub{color:rgba(255,255,255,.65);font-size:.92rem;line-height:1.7;position:relative;z-index:1}
 .who-photos{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
-.who-photo{border-radius:16px;overflow:hidden;position:relative;background:rgba(14,17,100,.07);border:1.5px dashed rgba(14,17,100,.18)}
+.who-photo{border-radius:16px;overflow:hidden;position:relative;background:rgba(14,17,100,.07);border:1.5px dashed rgba(14,17,100,.18);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;transition:border-color .2s}
+.who-photo:hover{border-color:var(--teal)}
 .who-photo:nth-child(1){aspect-ratio:1;grid-row:span 2}
 .who-photo:nth-child(2),.who-photo:nth-child(3){aspect-ratio:16/9}
 .who-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-
-/* ── OUR HUBS ── */
-.hubs{background:#fff}
-.hubs-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}
-.hub-card{border-radius:24px;overflow:hidden;border:2px solid transparent;transition:all .3s;box-shadow:0 4px 20px rgba(0,0,0,.06);cursor:pointer;position:relative}
-.hub-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,.12)}
-.hub-card.cub-card:hover{border-color:var(--teal)}
-.hub-card.sport-card:hover{border-color:var(--navy)}
-.hub-photo{aspect-ratio:16/9;position:relative;overflow:hidden}
-.hub-photo img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
-.hub-card:hover .hub-photo img{transform:scale(1.04)}
-.hub-photo-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,rgba(14,17,100,0.85) 100%)}
-.hub-badge{position:absolute;top:1rem;left:1rem;padding:.35rem .9rem;border-radius:50px;font-family:'Exo 2',sans-serif;font-weight:800;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase}
-.badge-cub{background:var(--teal);color:#fff}
-.badge-sport{background:var(--navy);color:#fff}
-.hub-body{padding:1.75rem}
-.hub-name{font-family:'Exo 2',sans-serif;font-weight:900;font-size:1.4rem;color:var(--navy);margin-bottom:.5rem}
-.hub-age{font-family:'Exo 2',sans-serif;font-weight:700;font-size:.8rem;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem}
-.hub-desc{color:var(--mid);font-size:.95rem;line-height:1.7;margin-bottom:1.25rem}
-.hub-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.5rem}
-.hub-tag{background:var(--light);color:var(--navy);font-family:'Exo 2',sans-serif;font-weight:700;font-size:.75rem;padding:.3rem .7rem;border-radius:50px}
-.hub-actions{display:flex;gap:.75rem;align-items:center;flex-wrap:wrap}
-.hub-btn-primary{background:var(--orange);color:#fff;padding:.7rem 1.5rem;border-radius:50px;font-family:'Exo 2',sans-serif;font-weight:800;font-size:.88rem;text-decoration:none;transition:all .2s;box-shadow:0 2px 10px rgba(255,118,0,.25)}
-.hub-btn-primary:hover{background:#e56800;transform:translateY(-1px)}
-.hub-btn-sec{color:var(--navy);font-family:'Exo 2',sans-serif;font-weight:700;font-size:.88rem;text-decoration:none;border-bottom:2px solid rgba(14,17,100,.2);padding-bottom:.1rem;transition:border-color .2s}
-.hub-btn-sec:hover{border-color:var(--teal);color:var(--teal)}
-
-/* Hub expanded panels */
-.hub-panel{display:none;background:var(--light);margin-top:-2px}
-.hub-panel.open{display:block}
-
-/* ── CUB HUB EXPANDED ── */
-.cub-expanded{background:var(--teal);padding:4rem 2rem;position:relative;overflow:hidden}
-.cub-expanded .wrap{position:relative;z-index:1}
-.cub-expanded-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:2.5rem}
-.cub-expanded .deco-shapes{position:absolute;inset:0;overflow:hidden;pointer-events:none}
-.deco-shape{position:absolute;border-radius:50%}
-.ds1{width:180px;height:180px;background:var(--lime);top:-40px;right:10%;opacity:0.13}
-.ds2{width:100px;height:100px;background:var(--peach);bottom:20%;left:5%;opacity:0.2}
-.ds3{width:60px;height:60px;background:var(--teal2);top:50%;right:25%;opacity:0.18}
-.feat-list{list-style:none}
-.feat-list li{display:flex;align-items:flex-start;gap:.7rem;padding:.6rem 0;border-bottom:1px solid rgba(14,17,100,.08);color:var(--mid);font-size:.92rem;line-height:1.5}
-.feat-list li:last-child{border-bottom:none}
-.feat-list li::before{content:"✓";color:var(--teal);font-weight:800;flex-shrink:0;margin-top:1px}
-.cub-vis{background:linear-gradient(140deg,#09094f 0%,#1a1f8a 60%,#0e3d6e 100%);border-radius:24px;padding:2rem}
-.cub-note{background:rgba(8,190,183,.14);border-radius:12px;border:1px solid rgba(8,190,183,.25);padding:1rem;margin-bottom:1rem}
-.cn-title{font-family:'Exo 2',sans-serif;font-weight:800;color:#fff;font-size:.88rem;margin-bottom:.2rem}
-.cn-sub{font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.5}
-.cub-stats-warm{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-bottom:1rem}
-.csw{background:rgba(255,255,255,.09);border-radius:14px;padding:1rem .75rem;text-align:center}
-.csw-n{font-family:'Exo 2',sans-serif;font-weight:900;font-size:1.5rem;line-height:1}
-.csw-l{font-size:.7rem;color:rgba(255,255,255,.5);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-top:.2rem}
-.ag{background:rgba(255,255,255,.09);border-radius:12px;padding:.85rem 1.1rem;display:flex;align-items:center;gap:.9rem;margin-bottom:.6rem}
-.ag-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
-.ad-t{background:var(--teal)}.ad-o{background:var(--orange)}.ad-l{background:var(--lime)}
-.ag-name{font-family:'Exo 2',sans-serif;font-weight:700;color:#fff;font-size:.88rem}
-.ag-det{font-size:.78rem;color:rgba(255,255,255,.5);margin-left:auto}
-.cub-accent-strip{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.5rem}
-.cas{display:inline-flex;align-items:center;gap:.5rem;background:rgba(14,17,100,.08);border-radius:50px;padding:.35rem .85rem;font-family:'Exo 2',sans-serif;font-weight:700;font-size:.78rem;color:var(--navy)}
-.cas-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.cub-expanded-close{text-align:center;margin-top:2rem}
-.close-btn{background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.25);color:#fff;padding:.65rem 1.5rem;border-radius:50px;font-family:'Exo 2',sans-serif;font-weight:700;font-size:.88rem;cursor:pointer;transition:all .2s}
-.close-btn:hover{background:rgba(255,255,255,.2)}
-
-/* ── SPORTS HUB EXPANDED ── */
-.sport-expanded{background:#fff;padding:4rem 2rem}
-.sport-expanded-intro{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:2.5rem;margin-bottom:3rem}
-.div-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem 1rem;border-radius:50px;font-family:'Exo 2',sans-serif;font-weight:800;font-size:.77rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.85rem}
-.db-t{background:var(--teal);color:#fff}
-.sports-body p{color:var(--mid);font-size:.97rem;line-height:1.85;margin-bottom:1rem}
-.sport-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
-.sc{background:var(--light);border-radius:20px;overflow:hidden;border:2px solid transparent;transition:all .25s;box-shadow:0 2px 10px rgba(0,0,0,.04)}
-.sc:hover{border-color:var(--teal);box-shadow:0 10px 32px rgba(8,190,183,.14);transform:translateY(-4px)}
-.sc-photo{aspect-ratio:16/9;position:relative;background:var(--navy);overflow:hidden}
-.sc-photo::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(14,17,100,.9) 0%,rgba(8,190,183,.25) 100%);z-index:1}
-.sc-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.sc-body{padding:1.25rem}
-.sc-name{font-family:'Exo 2',sans-serif;font-weight:900;font-size:.97rem;color:var(--navy);margin-bottom:.35rem}
-.sc-det{font-size:.82rem;color:var(--mid);line-height:1.5;margin-bottom:.85rem}
-.sc-sched{margin-top:.1rem}
-.sc-day{display:inline-block;font-family:'Exo 2',sans-serif;font-weight:800;font-size:.72rem;padding:.25rem .75rem;border-radius:50px;margin-bottom:.55rem}
-.pill-tues{background:rgba(8,190,183,.12);color:var(--teal)}
-.pill-thurs{background:rgba(255,118,0,.12);color:var(--orange)}
-.pill-wed{background:rgba(166,204,59,.18);color:#5a7a00}
-.pill-tba{background:rgba(14,17,100,.07);color:var(--mid)}
-.sc-slots{display:grid;grid-template-columns:1fr 1fr;gap:.35rem}
-.sc-slot{background:#fff;border:1px solid rgba(14,17,100,.12);border-radius:10px;padding:.32rem .4rem;text-align:center}
-.sc-slot.wide{grid-column:1/-1}
-.sc-slot .sa{display:block;font-family:'Exo 2',sans-serif;font-weight:800;font-size:.72rem;color:var(--navy)}
-.sc-slot .st{display:block;font-size:.7rem;color:var(--mid);margin-top:.05rem}
-.sc-tba{font-size:.78rem;color:var(--mid);line-height:1.45;font-style:italic}
-.sc-more{display:inline-block;margin-top:.85rem;font-family:'Exo 2',sans-serif;font-weight:700;font-size:.82rem;color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(8,190,183,.3);transition:border-color .2s}
-.sc-more:hover{border-color:var(--teal)}
-.ten-week{margin-top:3rem}
-.tw-head{text-align:center;margin-bottom:1.6rem}
-.tw-title{font-family:'Exo 2',sans-serif;font-weight:900;font-size:1.35rem;color:var(--navy)}
-.tw-sub{font-size:.9rem;color:var(--mid);margin-top:.35rem}
-.tw-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.1rem}
-.tw-card{border-radius:18px;padding:1.75rem;position:relative;overflow:hidden}
-.tw-card.indoor{background:var(--navy)}
-.tw-card.outdoor{background:linear-gradient(135deg,#1a5f3a,#0d8a4a)}
-.tw-card.flex{background:var(--light);border:2px solid rgba(14,17,100,.08)}
-.tw-num{font-family:'Exo 2',sans-serif;font-weight:900;font-size:2.2rem;color:var(--teal);margin-bottom:.35rem;line-height:1}
-.tw-lab{font-family:'Exo 2',sans-serif;font-weight:800;font-size:.9rem;color:#fff;margin-bottom:.5rem}
-.tw-card.flex .tw-lab{color:var(--navy)}
-.tw-desc{font-size:.85rem;color:rgba(255,255,255,.65);line-height:1.6}
-.tw-card.flex .tw-desc{color:var(--mid)}
-.sports-note{display:flex;align-items:flex-start;gap:.6rem;margin-top:1.5rem;font-size:.82rem;color:var(--mid)}
-.vn-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:.35rem}
-.sports-cta{text-align:center;margin-top:2rem}
-.sp-btn{background:var(--orange);color:#fff;padding:.9rem 2.25rem;border-radius:50px;font-family:'Exo 2',sans-serif;font-weight:800;font-size:.97rem;text-decoration:none;display:inline-block;transition:all .2s;box-shadow:0 4px 16px rgba(255,118,0,.3)}
-.sp-btn:hover{background:#e56800;transform:translateY(-2px)}
-.sport-expanded-close{text-align:center;margin-top:2.5rem}
-
-/* ── PRICING ── */
-.pricing{background:var(--light)}
-.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem;max-width:780px;margin-left:auto;margin-right:auto}
-.pc{background:#fff;border-radius:24px;padding:2.5rem;border:2px solid rgba(14,17,100,.08);transition:all .25s}
-.pc.feat{border-color:var(--teal);box-shadow:0 8px 40px rgba(8,190,183,.15)}
-.pc-lbl{font-family:'Exo 2',sans-serif;font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
-.pc-name{font-family:'Exo 2',sans-serif;font-weight:900;color:var(--navy);font-size:1.25rem;margin-bottom:1rem}
-.pc-amt{font-family:'Exo 2',sans-serif;font-weight:900;color:var(--navy);font-size:2.75rem;line-height:1;margin-bottom:.25rem}
-.pc-amt span{font-size:1rem;font-weight:700;color:var(--mid)}
-.pc-per{font-size:.82rem;color:var(--mid);margin-bottom:1.5rem}
-.pc-feats{list-style:none;margin-bottom:1.75rem}
-.pc-feats li{display:flex;align-items:flex-start;gap:.6rem;padding:.5rem 0;border-bottom:1px solid var(--light);font-size:.88rem;color:var(--mid);line-height:1.5}
-.pc-feats li:last-child{border-bottom:none}
-.pc-feats li::before{content:"✓";color:var(--teal);font-weight:800;flex-shrink:0;margin-top:1px}
-.pc-btn{display:block;text-align:center;background:var(--navy);color:#fff;padding:.85rem;border-radius:50px;font-family:'Exo 2',sans-serif;font-weight:800;font-size:.9rem;text-decoration:none;transition:all .2s}
-.pc.feat .pc-btn{background:var(--teal)}
-.pc-btn:hover{opacity:.9;transform:translateY(-1px)}
-.discount-note{background:#fff;border-radius:18px;padding:1.5rem 2rem;margin-top:1.5rem;display:flex;align-items:flex-start;gap:1rem;border:1px solid rgba(8,190,183,.2);max-width:780px;margin-left:auto;margin-right:auto}
-.dn-icon{width:40px;height:40px;border-radius:12px;background:rgba(8,190,183,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.dn-title{font-family:'Exo 2',sans-serif;font-weight:800;color:var(--navy);font-size:.97rem;margin-bottom:.3rem}
-.dn-sub{font-size:.87rem;color:var(--mid);line-height:1.6}
+.wp-lbl{font-family:'Exo 2',sans-serif;font-size:.7rem;font-weight:700;color:rgba(14,17,100,.3);text-transform:uppercase;letter-spacing:.05em;z-index:1}
+.wp-ico{font-size:1.4rem;opacity:.2;z-index:1}
 
 /* ── WHY CHOOSE ── */
 .why{background:#fff}
 .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3rem}
 .why-card{background:var(--light);border-radius:20px;padding:1.75rem;border:2px solid transparent;transition:all .25s;position:relative;overflow:hidden}
 .why-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:transparent;transition:background .25s}
-.why-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(14,17,100,.1)}
+.why-card:hover{border-color:transparent;transform:translateY(-4px);box-shadow:0 12px 40px rgba(14,17,100,.1)}
 .why-card:hover::after{background:var(--teal)}
 .wc-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
 .wi-t{background:rgba(8,190,183,.12)}.wi-o{background:rgba(255,118,0,.12)}.wi-n{background:rgba(14,17,100,.09)}.wi-l{background:rgba(166,204,59,.15)}
@@ -264,243 +136,478 @@ section{padding:5rem 2rem}
 .sb-text{font-family:'Exo 2',sans-serif;font-weight:900;font-size:1.35rem;color:#fff}
 .sb-text span{color:var(--orange)}
 .sb-text em{font-style:normal;color:var(--teal)}
-.sb-pill{background:rgba(255,118,0,.15);border:1px solid rgba(255,118,0,.3);color:var(--peach);font-family:'Exo 2',sans-serif;font-weight:800;font-size:.85rem;padding:.5rem 1.1rem;border-radius:50px;white-space:nowrap}
+.sb-pill{background:rgba(255,118,0,.15);border:1px solid rgba(255,118,0,.3);color:var(--peach);font-family:'Exo 2',sans-serif;font-weight:800;font-size:.85rem;padding:.5rem 1.1rem;border-radius:50px;white-space:nowrap;flex-shrink:0}
 
-/* ── JOIN OUR TEAM ── */
-.coaches-teaser{background:var(--light)}
-.ct-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;margin-top:3rem}
-.ct-card{background:#fff;border-radius:20px;padding:2rem;border:2px solid rgba(14,17,100,.08);transition:all .25s;cursor:pointer;box-shadow:0 2px 12px rgba(0,0,0,.05)}
-.ct-card:hover{background:#fff;border-color:var(--teal);transform:translateY(-4px);box-shadow:0 12px 36px rgba(8,190,183,.14)}
-.ct-icon{width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem}
-.ct-title{font-family:'Exo 2',sans-serif;font-weight:900;color:var(--navy);font-size:1.05rem;margin-bottom:.5rem}
-.ct-desc{font-size:.88rem;color:var(--mid);line-height:1.6}
-.ct-expand-btn{margin-top:2.5rem;text-align:center}
-.ct-expand-btn button{background:var(--navy);border:2px solid var(--navy);color:#fff;padding:.85rem 2rem;border-radius:50px;font-family:'Exo 2',sans-serif;font-weight:800;font-size:.97rem;cursor:pointer;transition:all .2s}
-.ct-expand-btn button:hover{background:var(--teal);border-color:var(--teal)}
+/* ── CUB HUB ── */
+.cub{background:var(--teal)}
+.cub-grid{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:start;margin-top:3.5rem}
+.div-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem 1rem;border-radius:50px;font-family:'Exo 2',sans-serif;font-weight:800;font-size:.77rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.85rem}
+.db-n{background:var(--navy);color:#fff}.db-t{background:var(--teal);color:#fff}.db-o{background:var(--orange);color:#fff}
+.cub-body p{color:var(--mid);font-size:.97rem;line-height:1.85;margin-bottom:1rem}
+.cub-body p:last-of-type{margin-bottom:1.5rem}
+.feat-list{list-style:none;margin-bottom:1.5rem}
+.feat-list li{display:flex;align-items:flex-start;gap:.7rem;padding:.6rem 0;border-bottom:1px solid rgba(14,17,100,.07);color:var(--mid);font-size:.92rem;line-height:1.5}
+.feat-list li:last-child{border-bottom:none}
+.feat-list li::before{content:"✓";color:var(--teal);font-weight:800;flex-shrink:0;margin-top:1px}
+.cub-vis{background:linear-gradient(140deg,var(--navy) 0%,#181e8a 100%);border-radius:24px;padding:2rem;display:flex;flex-direction:column;gap:.8rem;position:relative;overflow:hidden}
+.cub-vis::before{content:'';position:absolute;top:-25%;right:-15%;width:220px;height:220px;background:rgba(8,190,183,.12);border-radius:50%}
+.ag{background:rgba(255,255,255,.09);border-radius:12px;padding:.85rem 1.1rem;display:flex;align-items:center;gap:.9rem;position:relative;z-index:1}
+.ag-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.ad-t{background:var(--teal)}.ad-o{background:var(--orange)}.ad-l{background:var(--lime)}
+.ag-name{font-family:'Exo 2',sans-serif;font-weight:700;color:#fff;font-size:.88rem}
+.ag-det{font-size:.78rem;color:rgba(255,255,255,.5);margin-left:auto}
+.cub-note{background:rgba(8,190,183,.14);border-radius:12px;border:1px solid rgba(8,190,183,.25);padding:1rem;position:relative;z-index:1;margin-top:.25rem}
+.cn-title{font-family:'Exo 2',sans-serif;font-weight:800;color:#fff;font-size:.88rem;margin-bottom:.2rem}
+.cn-sub{font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.5}
+.cub-stats{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:.75rem;position:relative;z-index:1}
+.cs{background:rgba(255,255,255,.08);border-radius:12px;padding:1rem;text-align:center}
+.cs-n{font-family:'Exo 2',sans-serif;font-weight:900;font-size:1.65rem}
+.cs-l{font-size:.72rem;color:rgba(255,255,255,.45);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-top:.15rem}
+.cub-photos{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1.5rem}
+.cp{border-radius:14px;overflow:hidden;aspect-ratio:4/3;position:relative;background:var(--light);border:1.5px dashed rgba(8,190,183,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;transition:border-color .2s}
+.cp:hover{border-color:var(--teal)}
+.cp img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.cp-lbl{font-family:'Exo 2',sans-serif;font-size:.7rem;font-weight:700;color:rgba(8,190,183,.5);text-transform:uppercase;letter-spacing:.05em;z-index:1}
+.cp-ico{font-size:1.3rem;opacity:.3;z-index:1}
 
-/* Coach expanded panel */
-.coach-expanded{display:none;background:var(--navy);padding:4rem 2rem;border-top:1px solid rgba(255,255,255,.08)}
-.coach-expanded.open{display:block}
-.cr-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
-.cr-roles{display:flex;flex-direction:column;gap:1.25rem;margin-top:1.5rem}
-.cr-role{display:flex;gap:1rem;align-items:flex-start}
-.cr-role-icon{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.cr-role-title{font-family:'Exo 2',sans-serif;font-weight:800;color:#fff;font-size:.97rem;margin-bottom:.25rem}
-.cr-role-desc{font-size:.87rem;color:rgba(255,255,255,.6);line-height:1.6}
-.cr-perks{display:flex;flex-direction:column;gap:.85rem;margin-top:1.5rem}
-.cr-perk{display:flex;align-items:flex-start;gap:.75rem;color:rgba(255,255,255,.75);font-size:.92rem;line-height:1.6}
-.cp-dot{width:8px;height:8px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:.45rem}
+/* ── DAY GROUPS ── */
+.day-group-header{display:flex;align-items:center;padding:0.5rem 0;border-bottom:2px solid rgba(14,17,100,0.08);margin-bottom:0.25rem}
+.sports-intro{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+@media(max-width:960px){.sports-intro{grid-template-columns:1fr}}
 
-/* ── VENUE ── */
-.venue{background:var(--light)}
-.venue-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:stretch;margin-top:3rem}
-.venue-card{background:#fff;border-radius:20px;overflow:hidden;display:flex;flex-direction:column;height:100%}
-.vc-indoor{border:2px solid rgba(8,190,183,.3)}
-.vc-outdoor{border:2px solid rgba(166,204,59,.35)}
-.vc-map{height:240px}
-.vc-map iframe{width:100%;height:100%;border:none;display:block}
-.vc-body{display:flex;flex-direction:column;flex:1;padding:1.5rem}
-.vc-badge{display:inline-flex;align-self:flex-start;align-items:center;gap:.5rem;border-radius:50px;padding:.32rem .9rem;font-family:'Exo 2',sans-serif;font-weight:800;font-size:.75rem;letter-spacing:.02em}
-.vc-badge-indoor{background:rgba(8,190,183,.13);color:var(--teal2)}
-.vc-badge-outdoor{background:rgba(166,204,59,.18);color:#5a7a00}
-.vc-name{font-family:'Exo 2',sans-serif;font-weight:900;color:var(--navy);font-size:1.2rem;margin:.7rem 0 .35rem}
-.vc-tag{font-size:.9rem;color:var(--mid);line-height:1.6;margin-bottom:1rem}
-.vc-addr{display:flex;align-items:flex-start;gap:.55rem;font-size:.9rem;color:var(--mid);line-height:1.55;margin-bottom:.7rem}
-.vc-addr .ic,.vc-meta .ic{flex-shrink:0;font-size:1.05rem;line-height:1.4}
-.vc-meta{display:flex;align-items:center;gap:.55rem;margin-top:auto;padding-top:.3rem;font-family:'Exo 2',sans-serif;font-weight:700;font-size:.92rem;color:var(--navy)}
-.vc-meta a{color:var(--teal2);text-decoration:none}
-.tw-explained{margin-top:2.25rem;max-width:660px;margin-left:auto;margin-right:auto}
-.tw-explained-title{font-family:'Exo 2',sans-serif;font-weight:800;color:var(--navy);font-size:1rem;margin-bottom:.85rem;text-align:center}
-.tw-explained-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
-.twe-card{border-radius:14px;padding:1.1rem;display:flex;flex-direction:column;gap:.25rem}
-.twe-indoor{background:var(--navy);color:#fff}
-.twe-outdoor{background:rgba(166,204,59,.15);border:1px solid rgba(166,204,59,.3)}
-.twe-n{font-family:'Exo 2',sans-serif;font-weight:900;font-size:1.5rem;color:var(--teal);line-height:1}
-.twe-outdoor .twe-n{color:#5a7a00}
-.twe-label{font-family:'Exo 2',sans-serif;font-weight:700;font-size:.78rem;color:rgba(255,255,255,.8);letter-spacing:.06em;text-transform:uppercase}
-.twe-outdoor .twe-label{color:#5a7a00}
-.twe-loc{font-size:.78rem;color:rgba(255,255,255,.5);margin-top:.1rem}
-.twe-outdoor .twe-loc{color:#6a8a30}
+/* ── SPORTS HUB ── */
+.sports{background:#fff}
+.sports-intro{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-bottom:3.5rem}
+.sports-body p{color:var(--mid);font-size:.97rem;line-height:1.85;margin-bottom:1rem}
+.sports-body p:last-of-type{margin-bottom:0}
+.sport-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:0}
+.sc{background:var(--light);border-radius:20px;overflow:hidden;border:2px solid transparent;transition:all .25s;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+.sc:hover{border-color:var(--teal);box-shadow:0 10px 32px rgba(8,190,183,.14);transform:translateY(-4px)}
+.sc-photo{aspect-ratio:16/9;position:relative;background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;overflow:hidden}
+.sc-photo::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(14,17,100,.9) 0%,rgba(8,190,183,.25) 100%)}
+.sc-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.sc-ph-ico{font-size:1.6rem;z-index:1;opacity:.6}
+.sc-ph-lbl{font-family:'Exo 2',sans-serif;font-size:.65rem;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.06em;z-index:1}
+.sc-body{padding:1.25rem}
+.sc-name{font-family:'Exo 2',sans-serif;font-weight:900;font-size:.97rem;color:var(--navy);margin-bottom:.35rem}
+.sc-det{font-size:.82rem;color:var(--mid);line-height:1.5;margin-bottom:.85rem}
+.age-pills{display:flex;flex-wrap:wrap;gap:.3rem}
+.ap{background:#fff;color:var(--navy);font-size:.72rem;font-weight:700;padding:.2rem .55rem;border-radius:50px;font-family:'Exo 2',sans-serif;border:1px solid rgba(14,17,100,.12)}
+.sc-sched{margin-top:.1rem}
+.sc-day{display:inline-block;font-family:'Exo 2',sans-serif;font-weight:800;font-size:.72rem;padding:.25rem .75rem;border-radius:50px;margin-bottom:.55rem}
+.pill-tba{background:rgba(14,17,100,.07);color:var(--mid)}
+.sc-slots{display:grid;grid-template-columns:1fr 1fr;gap:.35rem}
+.sc-slot{background:#fff;border:1px solid rgba(14,17,100,.12);border-radius:10px;padding:.32rem .4rem;text-align:center}
+.sc-slot.wide{grid-column:1/-1}
+.sc-slot .sa{display:block;font-family:'Exo 2',sans-serif;font-weight:800;font-size:.72rem;color:var(--navy)}
+.sc-slot .st{display:block;font-size:.7rem;color:var(--mid);margin-top:.05rem}
+.sc-tba{font-size:.78rem;color:var(--mid);line-height:1.45;font-style:italic}
+.sports-note{display:flex;align-items:flex-start;gap:.6rem;margin-top:1.5rem;font-size:.82rem;color:var(--mid)}
+.sports-note .vn-dot{flex-shrink:0;margin-top:.35rem}
+.ten-week{margin:0 0 3.5rem}
+.tw-head{text-align:center;margin-bottom:1.6rem}
+.tw-title{font-family:'Exo 2',sans-serif;font-weight:900;font-size:1.35rem;color:var(--navy)}
+.tw-sub{font-size:.9rem;color:var(--mid);margin-top:.35rem}
+.tw-grid{display:grid;grid-template-columns:1.1fr 1.1fr 1fr;gap:1.1rem}
+.tw-card{background:var(--light);border-radius:20px;padding:1.5rem;border:2px solid transparent;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+.tw-num{font-family:'Exo 2',sans-serif;font-weight:900;font-size:1.9rem;line-height:1}
+.tw-card.indoor .tw-num{color:var(--teal)}
+.tw-card.outdoor .tw-num{color:var(--orange)}
+.tw-card.flex{background:var(--navy);color:#fff}
+.tw-card.flex .tw-num{color:var(--lime)}
+.tw-lab{font-family:'Exo 2',sans-serif;font-weight:800;font-size:.95rem;color:var(--navy);margin:.4rem 0 .45rem}
+.tw-card.flex .tw-lab{color:#fff}
+.tw-desc{font-size:.84rem;color:var(--mid);line-height:1.55}
+.tw-card.flex .tw-desc{color:rgba(255,255,255,.78)}
+@media(max-width:960px){.tw-grid{grid-template-columns:1fr}}
+.sc-more{display:inline-block;margin-top:.7rem;font-family:'Exo 2',sans-serif;font-weight:800;font-size:.78rem;color:var(--teal);text-decoration:none;letter-spacing:.02em}
+.sc-more:hover{color:var(--teal2)}
+body.sp-open > :not(.sport-page.active):not(nav):not(script):not(#mob){display:none!important}
+body:has(.sport-page:target) > :not(.sport-page:target):not(nav):not(script):not(#mob){display:none!important}
+.sport-page{display:none;background:#fff}
+.sport-page.active,.sport-page:target{display:block}
+.sports-cta{text-align:center;margin-top:2.4rem}
+.sports-cta .sp-btn{display:inline-block;padding:.85rem 2.8rem;font-size:.95rem}
+a.ag{text-decoration:none;transition:background .2s}
+a.ag:hover{background:rgba(255,255,255,.18)}
+.ag-go{color:var(--lime);font-family:'Exo 2',sans-serif;font-weight:800;font-size:.95rem;margin-left:.6rem;flex-shrink:0}
+.ag-hint{font-size:.72rem;color:rgba(255,255,255,.45);font-family:'Exo 2',sans-serif;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.1rem;position:relative;z-index:1}
+.sp-hero{position:relative;margin-top:68px;min-height:330px;display:flex;align-items:flex-end;background:var(--navy);overflow:hidden}
+.sp-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}
+.sp-hero-grad{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,17,100,.3),rgba(14,17,100,.93))}
+.sp-hero-content{position:relative;z-index:2;max-width:1160px;margin:0 auto;width:100%;padding:3.5rem 2rem 2.5rem}
+.sp-back{display:inline-block;color:rgba(255,255,255,.75);font-family:'Exo 2',sans-serif;font-weight:700;font-size:.82rem;text-decoration:none;margin-bottom:1rem}
+.sp-back:hover{color:var(--teal)}
+.sp-hero-content h1{font-family:'Exo 2',sans-serif;font-weight:900;font-size:clamp(2rem,5vw,2.9rem);color:#fff;margin:.55rem 0 .35rem;font-style:italic}
+.sp-tag{color:rgba(255,255,255,.85);font-size:1.02rem}
+.sp-body{max-width:1160px;margin:0 auto;padding:3rem 2rem 4.5rem}
+.sp-grid{display:grid;grid-template-columns:1.45fr 1fr;gap:3rem;align-items:start}
+.sp-h2{font-family:'Exo 2',sans-serif;font-weight:900;font-size:1.4rem;color:var(--navy);margin-bottom:1rem}
+.sp-h3{font-family:'Exo 2',sans-serif;font-weight:800;font-size:.98rem;color:var(--navy);margin:1.6rem 0 .6rem}
+.sp-about p{color:var(--mid);line-height:1.7;font-size:.95rem;margin-bottom:1rem}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.chip{background:var(--light);border:1px solid rgba(14,17,100,.1);color:var(--navy);font-family:'Exo 2',sans-serif;font-weight:700;font-size:.78rem;padding:.35rem .8rem;border-radius:50px}
+.chip.c2{background:rgba(8,190,183,.08);border-color:rgba(8,190,183,.3)}
+.sp-side{position:sticky;top:90px;display:flex;flex-direction:column;gap:1.1rem}
+.sp-card{background:var(--light);border-radius:20px;padding:1.5rem;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+.sp-card-t{font-family:'Exo 2',sans-serif;font-weight:900;font-size:.95rem;color:var(--navy);margin-bottom:.85rem}
+.sp-price-amt{font-family:'Exo 2',sans-serif;font-weight:900;font-size:2rem;color:var(--navy)}
+.sp-price-amt span{font-size:.95rem;color:var(--mid);font-weight:700}
+.sp-price-meta{font-size:.82rem;color:var(--mid);margin:.3rem 0 1.1rem;line-height:1.55}
+.sp-btn{display:block;text-align:center;background:var(--orange);color:#fff;font-family:'Exo 2',sans-serif;font-weight:800;font-size:.9rem;padding:.75rem;border-radius:50px;text-decoration:none;box-shadow:0 2px 12px rgba(255,118,0,.35);transition:background .2s}
+.sp-btn:hover{background:#e56800}
+.sp-struct{margin-top:3.5rem}
+.sp-struct-sub{color:var(--mid);font-size:.92rem;line-height:1.65;max-width:760px;margin-bottom:.5rem}
+.sp-tracks{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:1.4rem}
+.sp-track{border-radius:20px;padding:1.5rem;background:var(--light)}
+.sp-track.in{border-top:4px solid var(--teal)}
+.sp-track.out{border-top:4px solid var(--orange)}
+.sp-track-h{font-family:'Exo 2',sans-serif;font-weight:900;color:var(--navy);margin-bottom:.4rem;font-size:1rem}
+.sp-track-s{font-size:.8rem;color:var(--mid);margin-bottom:.9rem}
+.sp-phase{padding:.8rem 0;border-top:1px solid rgba(14,17,100,.08)}
+.sp-ph-n{font-family:'Exo 2',sans-serif;font-weight:800;font-size:.84rem;color:var(--navy)}
+.sp-ph-s{font-size:.7rem;color:var(--teal);font-weight:800;font-family:'Exo 2',sans-serif;margin-left:.45rem;text-transform:uppercase;letter-spacing:.05em}
+.sp-track.out .sp-ph-s{color:var(--orange)}
+.sp-ph-d{font-size:.81rem;color:var(--mid);line-height:1.55;margin-top:.25rem}
+@media(max-width:960px){.sp-grid{grid-template-columns:1fr}.sp-tracks{grid-template-columns:1fr}.sp-side{position:static}}
+.block-model{background:var(--navy);border-radius:24px;padding:2.5rem;margin-top:2rem;display:grid;grid-template-columns:1fr 1.35fr;gap:3rem;align-items:center}
+.bm-title{font-family:'Exo 2',sans-serif;font-weight:900;font-size:1.4rem;color:#fff;margin-bottom:.6rem}
+.bm-sub{color:rgba(255,255,255,.65);font-size:.92rem;line-height:1.65;margin-bottom:1.25rem}
+.bm-pt{display:flex;align-items:flex-start;gap:.7rem;margin-bottom:.6rem}
+.bm-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:7px}
+.bm-txt{color:rgba(255,255,255,.75);font-size:.88rem;line-height:1.5}
+.sched{background:rgba(255,255,255,.07);border-radius:16px;overflow:hidden}
+.sr{display:grid;grid-template-columns:80px 1fr;border-bottom:1px solid rgba(255,255,255,.07)}
+.sr:last-child{border-bottom:none}
+.sr-t{padding:.75rem 1rem;font-family:'Exo 2',sans-serif;font-weight:700;font-size:.77rem;color:var(--teal);background:rgba(8,190,183,.07);display:flex;align-items:center}
+.sr-s{padding:.75rem 1rem;font-size:.83rem;color:rgba(255,255,255,.8);display:flex;align-items:center}
+.sr-hd .sr-t,.sr-hd .sr-s{color:rgba(255,255,255,.4);font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+
+/* ── COMMUNITY GALLERY ── */
+.gallery{background:var(--light)}
+.gal-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:.875rem;margin-top:3rem;height:440px}
+.gp{border-radius:18px;overflow:hidden;position:relative;background:#e8eaf6;border:1.5px dashed rgba(14,17,100,.15);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;transition:border-color .2s}
+.gp:hover{border-color:var(--teal)}
+.gp img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.gp:first-child{grid-row:span 2}
+.gp-lbl{font-family:'Exo 2',sans-serif;font-size:.7rem;font-weight:700;color:rgba(14,17,100,.28);text-transform:uppercase;letter-spacing:.05em;z-index:1}
+.gp-ico{font-size:1.55rem;opacity:.2;z-index:1}
+
+/* ── PRICING ── */
+.pricing{background:#fff}
+.price-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:3rem;max-width:700px;margin-left:auto;margin-right:auto}
+.pc{border-radius:22px;padding:2rem;border:2px solid #e8eaf6;background:#fff;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.pc:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.07)}
+.pc.feat{border-color:var(--teal);box-shadow:0 4px 24px rgba(8,190,183,.13)}
+.pc-lbl{font-size:.77rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem;font-family:'Exo 2',sans-serif}
+.pc-name{font-family:'Exo 2',sans-serif;font-weight:900;font-size:1.35rem;color:var(--navy);margin-bottom:.2rem}
+.pc-amt{font-family:'Exo 2',sans-serif;font-weight:900;font-size:2.3rem;color:var(--navy);margin-bottom:.2rem}
+.pc-amt span{font-size:1rem;font-weight:600;color:var(--mid)}
+.pc-per{font-size:.82rem;color:var(--mid);margin-bottom:1.25rem}
+.pc-feats{list-style:none;margin-bottom:1.5rem}
+.pc-feats li{display:flex;align-items:flex-start;gap:.55rem;padding:.45rem 0;font-size:.88rem;color:var(--mid);border-bottom:1px solid var(--light)}
+.pc-feats li:last-child{border-bottom:none}
+.pc-feats li::before{content:"✓";color:var(--teal);font-weight:800;flex-shrink:0;margin-top:1px}
+.pc-btn{display:block;text-align:center;background:var(--navy);color:#fff;padding:.85rem;border-radius:50px;font-family:'Exo 2',sans-serif;font-weight:800;text-decoration:none;font-size:.92rem;transition:background .2s}
+.pc-btn:hover{background:var(--navy2)}
+.pc.feat .pc-btn{background:var(--teal)}
+.pc.feat .pc-btn:hover{background:var(--teal2)}
+.pop{position:absolute;top:1rem;right:1rem;background:var(--orange);color:#fff;font-size:.68rem;font-weight:800;padding:.25rem .65rem;border-radius:50px;font-family:'Exo 2',sans-serif}
 
 /* ── ENROL ── */
-.enrol{background:var(--navy)}
-.enrol-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
-.e-highs{list-style:none;margin-top:1.5rem;display:flex;flex-direction:column;gap:.85rem}
-.e-highs li{display:flex;align-items:flex-start;gap:.85rem;color:rgba(255,255,255,.75);font-size:.95rem;line-height:1.6}
-.e-ico{font-size:1.1rem;flex-shrink:0;margin-top:.1rem}
-.fcard{background:#fff;border-radius:24px;padding:2.5rem;border:none}
-.ft{font-family:'Exo 2',sans-serif;font-weight:900;color:var(--navy);font-size:1.35rem;margin-bottom:.4rem}
-.fs{font-size:.9rem;color:var(--mid);margin-bottom:1.75rem}
+.enrol{background:var(--navy);position:relative;overflow:hidden}
+.enrol::before{content:'';position:absolute;top:-50%;left:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(8,190,183,.1) 0%,transparent 70%)}
+.enrol::after{content:'';position:absolute;bottom:-40%;right:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(255,118,0,.1) 0%,transparent 70%)}
+.enrol-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:flex-start;position:relative;z-index:1;padding:5.5rem 0}
+.enrol .sec-eye::before{background:var(--teal)}
+.enrol .sec-eye{color:var(--teal)}
+.enrol .sec-title{color:#fff}
+.enrol .sec-sub{color:rgba(255,255,255,.65)}
+.e-highs{list-style:none;margin-top:2rem;display:flex;flex-direction:column;gap:1rem}
+.e-highs li{display:flex;align-items:flex-start;gap:.9rem;color:rgba(255,255,255,.8);font-size:.92rem;line-height:1.55}
+.e-ico{width:36px;height:36px;border-radius:10px;background:rgba(8,190,183,.14);border:1px solid rgba(8,190,183,.28);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.fcard{background:#fff;border-radius:24px;padding:2.25rem}
+.ft{font-family:'Exo 2',sans-serif;font-weight:900;font-size:1.28rem;color:var(--navy);margin-bottom:.3rem}
+.fs{font-size:.87rem;color:var(--mid);margin-bottom:1.75rem}
+.fg{margin-bottom:1.1rem}
+.fg label{display:block;font-size:.82rem;font-weight:700;color:var(--navy);margin-bottom:.35rem;font-family:'Exo 2',sans-serif}
+.fg input,.fg select,.fg textarea{width:100%;padding:.7rem 1rem;border:2px solid #e8eaf6;border-radius:12px;font-family:'Exo 2',sans-serif;font-size:.92rem;color:var(--dark);transition:border-color .2s,box-shadow .2s;outline:none;background:#fff;-webkit-appearance:none}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(8,190,183,.1)}
+.fg textarea{resize:vertical;min-height:78px}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.fg{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem}
-.fg label{font-family:'Exo 2',sans-serif;font-weight:700;font-size:.82rem;color:var(--navy);letter-spacing:.05em}
-.fg input,.fg select,.fg textarea{background:#fff;border:1.5px solid rgba(14,17,100,.15);border-radius:12px;padding:.75rem 1rem;color:var(--navy);font-family:'Exo 2',sans-serif;font-size:.92rem;transition:border-color .2s;outline:none}
-.fg input::placeholder,.fg textarea::placeholder{color:rgba(14,17,100,.3)}
-.fg select{cursor:pointer}
-.fg select option{background:#fff;color:var(--navy)}
-.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(8,190,183,.12)}
-.fg textarea{height:90px;resize:vertical}
-.fsub{width:100%;background:var(--orange);color:#fff;border:none;padding:1rem;border-radius:50px;font-family:'Exo 2',sans-serif;font-weight:800;font-size:1rem;cursor:pointer;transition:all .2s;box-shadow:0 4px 16px rgba(255,118,0,.3);margin-top:.5rem}
+.fsub{width:100%;padding:.95rem;background:var(--orange);color:#fff;border:none;border-radius:50px;font-family:'Exo 2',sans-serif;font-weight:900;font-size:.95rem;transition:background .2s,transform .2s;margin-top:.5rem}
 .fsub:hover{background:#e56800;transform:translateY(-1px)}
-.fn{font-size:.78rem;color:var(--mid);text-align:center;margin-top:.75rem}
-.bot-field{position:absolute;left:-9999px}
+.fn{font-size:.77rem;color:var(--mid);text-align:center;margin-top:.65rem}
+.bot-field{display:none}
 
 /* ── FOOTER ── */
-footer{background:#0a0d5a;padding:3rem 2rem 2rem}
+footer{background:#09094f;padding:3.5rem 2rem 2rem}
 .fi{max-width:1160px;margin:0 auto}
-.ft-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;margin-bottom:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.07)}
-.ft-brand img{height:40px;margin-bottom:1rem}
-.ft-brand p{font-size:.87rem;color:rgba(255,255,255,.4);line-height:1.7;max-width:280px}
-.fc-title{font-family:'Exo 2',sans-serif;font-weight:800;color:rgba(255,255,255,.5);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem}
-.fl{list-style:none;display:flex;flex-direction:column;gap:.6rem}
-.fl a{color:rgba(255,255,255,.55);text-decoration:none;font-size:.88rem;transition:color .2s}
+.ft-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem;margin-bottom:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.ft-brand img{height:48px;margin-bottom:.85rem}
+.ft-brand p{color:rgba(255,255,255,.5);font-size:.87rem;line-height:1.65;max-width:260px}
+.fc-title{font-family:'Exo 2',sans-serif;font-weight:800;color:#fff;font-size:.83rem;letter-spacing:.05em;text-transform:uppercase;margin-bottom:1.1rem}
+.fl{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.fl a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.87rem;transition:color .2s}
 .fl a:hover{color:var(--teal)}
 .ft-bot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.ft-bot p{font-size:.8rem;color:rgba(255,255,255,.25)}
-.bp{font-family:'Exo 2',sans-serif;font-weight:800;font-size:.72rem;color:rgba(255,255,255,.2);letter-spacing:.12em;text-transform:uppercase;padding:.25rem .6rem;border:1px solid rgba(255,255,255,.1);border-radius:50px;margin-left:.4rem}
+.ft-bot p{color:rgba(255,255,255,.3);font-size:.77rem}
+.bp{background:rgba(8,190,183,.13);border:1px solid rgba(8,190,183,.22);color:var(--teal);font-size:.7rem;font-weight:700;padding:.22rem .7rem;border-radius:50px;font-family:'Exo 2',sans-serif;margin-left:.35rem}
 
-/* ── SPORT DETAIL PAGES (preserved) ── */
-.sport-page{display:none;position:fixed;inset:0;background:#fff;z-index:200;overflow-y:auto}
-.sport-page.active{display:block}
-body.sp-open{overflow:hidden}
-.sp-hero{position:relative;height:380px;background:var(--navy);overflow:hidden}
-.sp-hero-img{width:100%;height:100%;object-fit:cover;opacity:.45}
-.sp-hero-grad{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(14,17,100,.4) 0%,rgba(14,17,100,.85) 100%)}
-.sp-hero-content{position:absolute;bottom:2.5rem;left:2rem;right:2rem;max-width:760px}
-.sp-back{color:rgba(255,255,255,.7);text-decoration:none;font-family:'Exo 2',sans-serif;font-weight:700;font-size:.85rem;display:inline-block;margin-bottom:1rem;transition:color .2s}
-.sp-back:hover{color:#fff}
-.sp-hero-content h1{font-family:'Exo 2',sans-serif;font-weight:900;font-size:2.6rem;color:#fff;margin:.5rem 0 .3rem;letter-spacing:-0.02em}
-.sp-tag{color:rgba(255,255,255,.7);font-size:1rem;line-height:1.6}
-.sp-body{max-width:1160px;margin:0 auto;padding:3rem 2rem 5rem;display:grid;grid-template-columns:1fr 340px;gap:4rem;align-items:start}
-.sp-about p{color:var(--mid);font-size:.97rem;line-height:1.85;margin-bottom:1rem}
-.sp-h2{font-family:'Exo 2',sans-serif;font-weight:900;color:var(--navy);font-size:1.5rem;margin-bottom:1rem}
-.sp-h3{font-family:'Exo 2',sans-serif;font-weight:800;color:var(--navy);font-size:1rem;margin:1.5rem 0 .75rem}
-.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.25rem}
-.chip{background:var(--light);color:var(--navy);font-family:'Exo 2',sans-serif;font-weight:700;font-size:.78rem;padding:.3rem .7rem;border-radius:50px}
-.sp-prog-table{width:100%;border-collapse:collapse;margin-top:.75rem}
-.sp-prog-table th{background:var(--navy);color:#fff;font-family:'Exo 2',sans-serif;font-weight:800;font-size:.82rem;padding:.7rem .85rem;text-align:left}
-.sp-prog-table td{padding:.7rem .85rem;border-bottom:1px solid var(--light);font-size:.87rem;color:var(--mid);vertical-align:top}
-.sp-prog-table td:first-child{font-family:'Exo 2',sans-serif;font-weight:700;color:var(--navy)}
-.sp-aside{background:var(--light);border-radius:20px;padding:1.75rem;position:sticky;top:88px}
-.sp-aside-title{font-family:'Exo 2',sans-serif;font-weight:900;color:var(--navy);font-size:1.1rem;margin-bottom:1.25rem}
-.sp-info-row{display:flex;align-items:center;gap:.85rem;padding:.7rem 0;border-bottom:1px solid rgba(14,17,100,.07)}
-.sp-info-row:last-of-type{border-bottom:none;margin-bottom:1rem}
-.sp-info-icon{width:34px;height:34px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.95rem}
-.sp-info-label{font-family:'Exo 2',sans-serif;font-weight:700;color:var(--navy);font-size:.88rem}
-.sp-info-val{font-size:.82rem;color:var(--mid)}
-.sp-btn{display:block;text-align:center;background:var(--orange);color:#fff;padding:.9rem;border-radius:50px;font-family:'Exo 2',sans-serif;font-weight:800;font-size:.95rem;text-decoration:none;transition:all .2s;box-shadow:0 4px 16px rgba(255,118,0,.3)}
-.sp-btn:hover{background:#e56800}
-.sp-struct{margin-top:2.5rem;padding-top:2.5rem;border-top:1px solid var(--light);grid-column:1/-1}
-.sp-struct-sub{color:var(--mid);font-size:.92rem;line-height:1.7;margin-bottom:1.5rem}
-.sp-tracks{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
-.sp-track{border-radius:18px;padding:1.5rem;overflow:hidden}
-.sp-track.in{background:var(--navy)}
-.sp-track.out{background:linear-gradient(135deg,#1a5f3a,#0d8a4a)}
-.sp-track-h{font-family:'Exo 2',sans-serif;font-weight:800;font-size:.85rem;color:var(--teal);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.4rem}
-.sp-track.out .sp-track-h{color:var(--lime)}
-.sp-track-s{font-size:.83rem;color:rgba(255,255,255,.55);line-height:1.5;margin-bottom:1rem;padding-bottom:.85rem;border-bottom:1px solid rgba(255,255,255,.1)}
-.sp-phase{margin-bottom:.7rem}
-.sp-ph-n{font-family:'Exo 2',sans-serif;font-weight:800;color:#fff;font-size:.88rem;display:block;margin-bottom:.1rem}
-.sp-ph-s{font-size:.75rem;font-weight:700;color:rgba(255,255,255,.4);display:block;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem}
-.sp-ph-d{font-size:.82rem;color:rgba(255,255,255,.6);line-height:1.5}
+/* ── REVEAL ── */
+.r{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease}
+.r.v{opacity:1;transform:translateY(0)}
+.r.r2{transition-delay:.1s}
+.r.r3{transition-delay:.2s}
 
-/* ── ANIMATIONS ── */
-.r{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
-.r.v{opacity:1;transform:none}
-.r2{transition-delay:.12s}
-.r3{transition-delay:.24s}
-
-/* ── MOBILE ── */
-@media(max-width:900px){
-  .hamburger{display:flex}
-  .nav-links{display:none}
-  .hero-tagline{font-size:2.6rem}
-  .who-grid,.hubs-grid,.cub-expanded-grid,.sport-expanded-intro,.cr-grid,.enrol-inner,.ft-top,.venue-grid{grid-template-columns:1fr}
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .hero-inner{grid-template-columns:1fr;text-align:center;gap:2rem;padding-top:1rem}
+  .hero-logo{order:-1}.hero-logo img{max-width:360px}
+  .hero-eyebrow,.stat-row{justify-content:center}
+  .hero-sub{margin-left:auto;margin-right:auto}
+  .who-grid,.sports-intro,.cub-grid,.enrol-inner{grid-template-columns:1fr;gap:2.5rem}
   .why-grid{grid-template-columns:1fr 1fr}
-  .ct-grid{grid-template-columns:1fr}
   .sport-cards{grid-template-columns:1fr 1fr}
-  .tw-grid,.sp-tracks{grid-template-columns:1fr}
-  .sp-body{grid-template-columns:1fr}
-  .sp-aside{position:static}
-  .price-grid{grid-template-columns:1fr}
-  .stat-row{gap:1.5rem}
-  .tw-explained-grid{grid-template-columns:1fr 1fr}
-  .frow{grid-template-columns:1fr}
+  .block-model{grid-template-columns:1fr}
+  .price-grid{grid-template-columns:1fr;max-width:400px}
+  .enrol-inner{padding:5rem 0}
+  .ft-top{grid-template-columns:1fr 1fr}
+  .ps-inner{grid-template-columns:repeat(2,1fr)}
+  .gal-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;height:auto}
+  .gp:first-child{grid-row:span 1}
 }
-@media(max-width:600px){
-  .hero-tagline{font-size:2rem}
-  .sec-title{font-size:1.8rem}
-  .hubs-grid{grid-template-columns:1fr}
+@media(max-width:640px){
+  .nav-links{display:none}.hamburger{display:flex}
   .why-grid{grid-template-columns:1fr}
   .sport-cards{grid-template-columns:1fr}
-  .tw-explained-grid{grid-template-columns:1fr}
+  .frow{grid-template-columns:1fr}
+  .ft-top{grid-template-columns:1fr}
+  .hero-tagline{font-size:2.6rem}
+  .hero-because{font-size:1.35rem}
+  .sec-title{font-size:2.1rem}
+  .who-photos{grid-template-columns:1fr}
+  .who-photo:nth-child(1){grid-row:span 1;aspect-ratio:16/9}
+  .cub-photos{grid-template-columns:1fr}
+  .gal-grid{grid-template-columns:1fr;height:auto}
+  .ps-inner{grid-template-columns:repeat(2,1fr)}
 }
+
+/* ── COACH REGISTER ── */
+.coach-reg{background:var(--navy);position:relative;overflow:hidden;padding:5.5rem 2rem}
+.coach-reg::before{content:'';position:absolute;top:-40%;right:-15%;width:550px;height:550px;background:radial-gradient(circle,rgba(8,190,183,.12) 0%,transparent 65%);pointer-events:none}
+.coach-reg::after{content:'';position:absolute;bottom:-30%;left:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(166,204,59,.08) 0%,transparent 65%);pointer-events:none}
+.cr-grid{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;position:relative;z-index:1}
+.cr-roles{display:flex;flex-direction:column;gap:1.1rem;margin-top:2rem}
+.cr-role{display:flex;align-items:flex-start;gap:1rem;background:rgba(255,255,255,.06);border-radius:14px;padding:1.1rem 1.25rem;border:1px solid rgba(255,255,255,.08);transition:background .2s,border-color .2s}
+.cr-role:hover{background:rgba(255,255,255,.1);border-color:rgba(8,190,183,.25)}
+.cr-role-icon{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cr-role-title{font-family:'Exo 2',sans-serif;font-weight:800;color:#fff;font-size:.92rem;margin-bottom:.2rem}
+.cr-role-desc{font-size:.82rem;color:rgba(255,255,255,.58);line-height:1.5}
+.cr-perks{display:flex;flex-direction:column;gap:.65rem;margin-top:1.75rem;padding:1.5rem;background:rgba(255,255,255,.05);border-radius:14px;border:1px solid rgba(255,255,255,.07)}
+.cr-perk{display:flex;align-items:flex-start;gap:.75rem;font-size:.88rem;color:rgba(255,255,255,.72);line-height:1.5}
+.cp-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:6px}
+@media(max-width:960px){.cr-grid{grid-template-columns:1fr;gap:2.5rem}}
+@media(max-width:760px){.venue [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important}}
+
+/* ── CUB HUB TEAL THEME ── */
+.cub .sec-eye{color:var(--navy) !important}
+.cub .sec-eye::before{background:var(--navy) !important}
+.cub .sec-title{color:var(--navy) !important}
+.cub .cub-body p{color:rgba(14,17,100,0.82) !important}
+.cub .feat-list li{color:rgba(14,17,100,0.82) !important;border-bottom-color:rgba(14,17,100,0.12) !important}
+.cub .feat-list li::before{color:var(--navy) !important}
+.cub .div-badge.db-n{background:var(--navy);color:#fff}
+
+/* Age dots → accent colours */
+.cub .ad-t{background:var(--lime) !important}
+.cub .ad-o{background:var(--peach) !important}
+.cub .ad-l{background:#fff !important}
+
+/* Visual card on teal — navy bg looks striking */
+.cub .cub-vis{background:var(--navy);background:linear-gradient(140deg,#09094f 0%,var(--navy) 100%)}
+
+/* Stats nums — accent colours */
+.cub .cs-n:first-of-type{color:var(--lime) !important}
+
+/* Photo placeholders on teal bg */
+.cub .cp{background:rgba(14,17,100,0.1) !important;border-color:rgba(14,17,100,0.25) !important}
+.cub .cp:hover{border-color:var(--navy) !important}
+.cub .cp-lbl{color:rgba(14,17,100,0.45) !important}
+
+/* Cub note block — use lime accent */
+.cub-vis .cub-note{background:rgba(166,204,59,0.18) !important;border-color:rgba(166,204,59,0.35) !important}
+.cub-vis .cn-title{color:var(--lime) !important}
+
+/* Age group rows — slightly lighter than navy card */
+.cub-vis .ag{background:rgba(255,255,255,0.1) !important}
+
+/* Stat blocks — peach accent for second */
+.cub .cs:last-child .cs-n{color:var(--peach) !important}
+.cub .cs{background:rgba(255,255,255,0.1) !important}
+
+/* ── DISCOUNT NOTE ── */
+.discount-note{display:flex;align-items:flex-start;gap:1rem;background:rgba(8,190,183,0.08);border:1.5px solid rgba(8,190,183,0.25);border-radius:16px;padding:1.25rem 1.5rem;margin-top:1.75rem;max-width:700px;margin-left:auto;margin-right:auto}
+.dn-icon{width:40px;height:40px;border-radius:10px;background:rgba(8,190,183,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.dn-title{font-family:'Exo 2',sans-serif;font-weight:800;color:var(--navy);font-size:.95rem;margin-bottom:.3rem}
+.dn-sub{font-size:.85rem;color:var(--mid);line-height:1.6}
+
+/* ── ENDORSEMENT BAR ── */
+
+/* ── VENUE & TIMETABLE ── */
+.venue{background:var(--light);padding:5.5rem 2rem}
+.venue-grid{display:grid;grid-template-columns:1fr 1fr;max-width:1160px;margin:3.5rem auto 0;gap:2rem}
+.venue-map{border-radius:20px;overflow:hidden;box-shadow:0 8px 32px rgba(14,17,100,0.12);aspect-ratio:4/3;position:relative}
+.venue-map iframe{width:100%;height:100%;border:none;display:block}
+.venue-address{background:#fff;border-radius:16px;padding:1.25rem 1.5rem;margin-top:1rem;display:flex;align-items:center;gap:1rem;border:1.5px solid rgba(14,17,100,0.08)}
+.va-icon{width:38px;height:38px;border-radius:10px;background:rgba(8,190,183,0.12);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.va-name{font-family:'Exo 2',sans-serif;font-weight:800;color:var(--navy);font-size:0.92rem;margin-bottom:0.15rem}
+.va-addr{font-size:0.82rem;color:var(--mid)}
+.timetable{display:flex;flex-direction:column;gap:1.25rem}
+.tt-day{background:#fff;border-radius:16px;overflow:hidden;border:1.5px solid rgba(14,17,100,0.07);box-shadow:0 2px 10px rgba(0,0,0,0.04)}
+.tt-day-header{display:flex;align-items:center;gap:1rem;padding:0.9rem 1.25rem;border-bottom:1px solid rgba(14,17,100,0.07)}
+.tt-day-pill{font-family:'Exo 2',sans-serif;font-weight:800;font-size:0.8rem;padding:0.3rem 0.85rem;border-radius:50px;white-space:nowrap}
+.pill-tues{background:rgba(8,190,183,0.12);color:var(--teal)}
+.pill-wed{background:rgba(166,204,59,0.18);color:#6a8a1f}
+.pill-thurs{background:rgba(255,118,0,0.12);color:var(--orange)}
+.tt-sport{font-family:'Exo 2',sans-serif;font-weight:800;color:var(--navy);font-size:0.92rem}
+.tt-note{font-size:0.78rem;color:var(--mid);margin-left:auto;font-style:italic}
+.tt-slots{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.tt-slot{padding:0.6rem 0.75rem;border-right:1px solid rgba(14,17,100,0.06);text-align:center}
+.tt-slot:last-child{border-right:none}
+.tt-age{font-family:'Exo 2',sans-serif;font-weight:800;font-size:0.82rem;color:var(--navy);margin-bottom:0.15rem}
+.tt-time{font-size:0.75rem;color:var(--mid)}
+.tt-slots-2{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.tt-slot-wide{padding:0.65rem 1rem;border-right:1px solid rgba(14,17,100,0.06);text-align:center}
+.tt-slot-wide:last-child{border-right:none}
+.venue-note{background:var(--navy);border-radius:14px;padding:1rem 1.25rem;margin-top:0.5rem;display:flex;align-items:flex-start;gap:0.75rem}
+.vn-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:6px}
+.vn-text{font-size:0.83rem;color:rgba(255,255,255,0.68);line-height:1.55;font-style:italic}
+@media(max-width:960px){.venue-grid{grid-template-columns:1fr}.venue-two-col{grid-template-columns:1fr !important}.tt-slots{grid-template-columns:repeat(2,1fr)}.tt-slot{border-bottom:1px solid rgba(14,17,100,0.06)}.tt-slot:nth-child(2n){border-right:none}}
+@media(max-width:640px){.tt-slots{grid-template-columns:1fr 1fr}}
+
+/* ── DECORATIVE SHAPES ── */
+.deco-shapes{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.deco-shape{position:absolute;border-radius:50%;opacity:0.18}
+.ds1{width:180px;height:180px;background:var(--lime);top:-40px;right:8%;animation:float1 6s ease-in-out infinite}
+.ds2{width:100px;height:100px;background:var(--peach);bottom:10%;left:3%;animation:float2 8s ease-in-out infinite}
+.ds3{width:60px;height:60px;background:#fff;top:30%;left:12%;animation:float3 7s ease-in-out infinite;opacity:0.22}
+.ds4{width:130px;height:130px;background:var(--orange);bottom:-30px;right:20%;animation:float1 9s ease-in-out infinite;opacity:0.12}
+.ds5{width:45px;height:45px;background:var(--lime);top:55%;right:5%;animation:float2 5s ease-in-out infinite;opacity:0.25}
+@keyframes float1{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-18px) rotate(8deg)}}
+@keyframes float2{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-12px) rotate(-6deg)}}
+@keyframes float3{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-10px) scale(1.08)}}
+
+/* ── HERO FLOATING SHAPES ── */
+.hero-deco{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.hd1{position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(166,204,59,0.08);top:15%;right:10%;animation:float1 7s ease-in-out infinite}
+.hd2{position:absolute;width:140px;height:140px;border-radius:50%;background:rgba(251,181,117,0.1);bottom:20%;left:5%;animation:float2 9s ease-in-out infinite}
+.hd3{position:absolute;width:80px;height:80px;border-radius:50%;background:rgba(255,118,0,0.08);top:60%;right:35%;animation:float3 6s ease-in-out infinite}
+.hd4{position:absolute;width:300px;height:300px;border-radius:50%;border:2px solid rgba(8,190,183,0.1);top:5%;left:40%;animation:float1 11s ease-in-out infinite}
+.hd5{position:absolute;width:50px;height:50px;border-radius:50%;background:rgba(166,204,59,0.12);bottom:35%;right:8%;animation:float2 5s ease-in-out infinite}
+
+/* ── CUB HUB WARM ACCENTS ── */
+.cub .sec-title{color:var(--navy) !important}
+.cub-section-inner{position:relative}
+.cub-accent-strip{display:flex;gap:0.6rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.cas{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(14,17,100,0.08);border-radius:50px;padding:0.35rem 0.85rem;font-family:'Exo 2',sans-serif;font-weight:700;font-size:0.78rem;color:var(--navy)}
+.cas-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+
+/* Cub visual card — warmer tones */
+.cub-vis{background:linear-gradient(140deg,#09094f 0%,#1a1f8a 60%,#0e3d6e 100%) !important}
+
+/* Fun stats with icons */
+.cub-stats-warm{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-top:1.5rem;position:relative;z-index:1}
+.csw{background:rgba(255,255,255,0.09);border-radius:14px;padding:1rem 0.75rem;text-align:center;position:relative;overflow:hidden}
+.csw::before{content:'';position:absolute;inset:0;opacity:0.06;border-radius:14px}
+.csw-n{font-family:'Exo 2',sans-serif;font-weight:900;font-size:1.5rem;line-height:1}
+.csw-l{font-size:0.7rem;color:rgba(255,255,255,.5);font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-top:0.2rem}
+
+/* ── HERO URGENCY ── */
+.hero-urgency{display:flex;align-items:center;gap:0.85rem;background:rgba(255,118,0,0.12);border:1px solid rgba(255,118,0,0.3);border-radius:12px;padding:0.75rem 1.1rem;margin-top:1.25rem;margin-bottom:0}
+.hu-pulse{width:10px;height:10px;border-radius:50%;background:var(--orange);flex-shrink:0;animation:pulse-dot 2s ease-in-out infinite;box-shadow:0 0 0 0 rgba(255,118,0,0.5)}
+@keyframes pulse-dot{0%{box-shadow:0 0 0 0 rgba(255,118,0,0.5)}70%{box-shadow:0 0 0 8px rgba(255,118,0,0)}100%{box-shadow:0 0 0 0 rgba(255,118,0,0)}}
+.hu-text{font-size:0.87rem;color:rgba(255,255,255,0.82);line-height:1.5}
+.hu-bold{font-family:'Exo 2',sans-serif;font-weight:800;color:#fff}
+.hu-link{display:inline-block;margin-left:0.6rem;color:var(--orange);font-family:'Exo 2',sans-serif;font-weight:800;font-size:0.87rem;text-decoration:none;border-bottom:1px solid rgba(255,118,0,0.4);transition:color 0.2s,border-color 0.2s}
+.hu-link:hover{color:var(--peach);border-color:var(--peach)}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="#home"><img src="assets/images/image-01-fd5f8f7b3591.png" alt="HuddleHub"></a>
     <ul class="nav-links">
       <li><a href="#who">Who We Are</a></li>
-      <li><a href="#hubs">Our Hubs</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#why">Why HuddleHub</a></li>
-      <li><a href="#coaches">Join Our Team</a></li>
+      <li><a href="#cub-hub">Cub Hub</a></li>
+      <li><a href="#sports-hub">Sports Hub</a></li>
+      <li><a href="#venue">Venue &amp; Times</a></li>
+          <li><a href="#coaches" onclick="setTimeout(()=>{var p=document.getElementById('coaches-panel');if(p)p.style.display='block'},100)">Join Our Team</a></li>
       <li><a href="#enrol" class="nav-cta">Enrol Now</a></li>
     </ul>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <div class="hamburger" onclick="toggleMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
-    </button>
+    </div>
   </div>
 </nav>
 <div class="mob" id="mob">
   <a href="#who" onclick="closeMob()">Who We Are</a>
-  <a href="#hubs" onclick="closeMob()">Our Hubs</a>
-  <a href="#pricing" onclick="closeMob()">Pricing</a>
-  <a href="#why" onclick="closeMob()">Why HuddleHub</a>
-  <a href="#coaches" onclick="closeMob()">Join Our Team</a>
+  <a href="#cub-hub" onclick="closeMob()">Cub Hub</a>
+  <a href="#sports-hub" onclick="closeMob()">Sports Hub</a>
+  <a href="#venue" onclick="closeMob()">Venue &amp; Times</a>
+  <a href="#coaches" onclick="closeMob();setTimeout(()=>{var p=document.getElementById('coaches-panel');if(p)p.style.display='block'},100)">Join Our Team</a>
   <a href="#enrol" class="mc" onclick="closeMob()">Enrol Now</a>
 </div>
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero-bg">
-    <img src="assets/images/image-02-3699a28e0c36.jpg" alt="">
-    <div class="hero-overlay"></div>
-    <div class="hero-blob1"></div>
-    <div class="hero-blob2"></div>
-  </div>
-  <div class="hero-inner r">
-    <div class="hero-eyebrow">George, Western Cape &nbsp;·&nbsp; Term 3 2026</div>
-    <h1 class="hero-tagline">From <span class="accent">Tiny Tots</span><br>to <span class="accent2">Team Sports</span></h1>
-    <p class="hero-because">Because Real Life is Better Together.</p>
-    <p class="hero-sub">From Mommy &amp; Me classes for babies and toddlers to professional sports coaching for ages 6–13 — HuddleHub is where George families come together, make real friends, and find their tribe.</p>
-    <div class="hero-acts">
-      <a href="#enrol" class="btn-prim">Register Interest →</a>
-      <a href="#hubs" class="btn-sec">Explore Our Hubs</a>
-    </div>
-    <div class="hero-urgency">
-      <div class="hu-pulse"></div>
-      <div class="hu-text"><span class="hu-bold">Limited spaces available</span> — groups fill on a first come, first served basis.<a href="#enrol" class="hu-link">Secure your spot →</a></div>
-    </div>
-    <div class="stat-row">
-      <div class="stat"><div class="stat-n">0–13</div><div class="stat-l">Ages Welcome</div></div>
-      <div class="stat"><div class="stat-n">6</div><div class="stat-l">Sports Codes</div></div>
-      <div class="stat"><div class="stat-n">10</div><div class="stat-l">Weeks / Term</div></div>
+  <div class="hero-bg"><div class="hero-blob1"></div><div class="hero-blob2"></div><div class="hero-blob3"></div></div>
+  <div class="hero-deco"><div class="hd1"></div><div class="hd2"></div><div class="hd3"></div><div class="hd4"></div><div class="hd5"></div></div>
+  <div class="hero-inner">
+    <div class="hero-logo r"><img src="assets/images/image-01-fd5f8f7b3591.png" alt="HuddleHub"></div>
+    <div class="r r2">
+      <div class="hero-eyebrow">George, Western Cape &nbsp;·&nbsp; Term 3 2026</div>
+      <h1 class="hero-tagline">Every Child<br>Deserves a <span class="accent">Team.</span></h1>
+      <p class="hero-because">Because Real Life is Better Together.</p>
+      <p class="hero-sub">Professional sports coaching for ages 6–13 and early childhood classes for ages 0–5. HuddleHub is where George families find their people — week after week, term after term.</p>
+      <div class="hero-acts">
+        <a href="#enrol" class="btn-prim">Secure Your Spot →</a>
+        <a href="#who" class="btn-sec">Learn More</a>
+      </div>
+      <div class="hero-urgency">
+        <div class="hu-pulse"></div>
+        <div class="hu-text">
+          <span class="hu-bold">Spaces filling fast</span> — Term 3 starts 27 July. Don't miss out.
+          <a href="#enrol" class="hu-link">Secure your spot now →</a>
+        </div>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><div class="stat-n">0–13</div><div class="stat-l">Ages Welcome</div></div>
+        <div class="stat"><div class="stat-n">5</div><div class="stat-l">Sports Codes</div></div>
+        <div class="stat"><div class="stat-n">10</div><div class="stat-l">Weeks / Term</div></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- WHO WE ARE -->
+<!-- PHOTO STRIP -->
+<div class="photo-strip">
+  <div class="ps-inner">
+    <label class="photo-slot"><img src="assets/images/image-02-3699a28e0c36.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;border-radius:inherit;"></label>
+    <label class="photo-slot"><img src="assets/images/image-03-a5212b239a0d.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;border-radius:inherit;"></label>
+    <label class="photo-slot"><img src="assets/images/image-04-ab4a541bc285.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;border-radius:inherit;"></label>
+    <label class="photo-slot"><img src="assets/images/image-05-62ef4f5ebf0b.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;border-radius:inherit;"></label>
+  </div>
+</div>
+
+<!-- WHO ARE WE -->
 <section class="who" id="who">
   <div class="wrap">
     <div class="who-grid">
       <div class="r">
         <div class="sec-eye">Who We Are</div>
-        <h2 class="sec-title">Your People.<br>Right Here in George.</h2>
+        <h2 class="sec-title">Your People.<br><span style="color:var(--orange)">Right Here in George.</span></h2>
         <p style="color:var(--mid);font-size:1rem;line-height:1.85;margin-bottom:1.25rem">HuddleHub is a George-based community programme built for families who are still finding their feet — whether you arrived last month or have been searching for connection for longer than you'd like to admit.</p>
         <p style="color:var(--mid);font-size:1rem;line-height:1.85;margin-bottom:1.5rem">Through fun, structured group activities — from Mommy &amp; Me classes to kids' team sports — we give every family the chance to <strong>Gather, Connect and Belong</strong>.</p>
         <ul class="tribe-list">
@@ -515,198 +622,344 @@ body.sp-open{overflow:hidden}
         </div>
       </div>
       <div class="who-photos r r2">
-        <label class="who-photo"><img src="assets/images/image-06-909f06c8b2ad.jpg" alt=""></label>
-        <label class="who-photo"><img src="assets/images/image-07-efc29c620ecc.jpg" alt=""></label>
-        <label class="who-photo"><img src="assets/images/image-08-f3c1fb7619f7.jpg" alt=""></label>
+        <label class="who-photo"><img src="assets/images/image-06-909f06c8b2ad.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;border-radius:inherit;"></label>
+        <label class="who-photo"><img src="assets/images/image-07-efc29c620ecc.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;border-radius:inherit;"></label>
+        <label class="who-photo"><img src="assets/images/image-08-f3c1fb7619f7.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;border-radius:inherit;"></label>
       </div>
     </div>
   </div>
 </section>
 
-<!-- OUR HUBS -->
-<section class="hubs" id="hubs">
+
+
+<!-- WHY CHOOSE -->
+<section class="why" id="why">
   <div class="wrap">
     <div class="r" style="text-align:center">
-      <div class="sec-eye" style="justify-content:center">Our Programmes</div>
-      <h2 class="sec-title" style="text-align:center">Find Your Hub.</h2>
-      <p class="sec-sub" style="margin:0 auto;text-align:center">Two programmes. One community. Click either hub to explore everything it offers.</p>
+      <div class="sec-eye" style="justify-content:center">Why Choose HuddleHub</div>
+      <h2 class="sec-title" style="text-align:center">Everything Your Child Needs.<br><span style="color:var(--orange)">In One Place.</span></h2>
     </div>
-    <div class="hubs-grid r">
-
-      <!-- CUB HUB CARD -->
-      <div class="hub-card cub-card" onclick="toggleHub('cub')">
-        <div class="hub-photo">
-          <img src="assets/images/image-17-cub-babies-05d0313a72cc.jpg" alt="Cub Hub">
-          <div class="hub-photo-overlay"></div>
-          <span class="hub-badge badge-cub">Cub Hub</span>
-        </div>
-        <div class="hub-body">
-          <div class="hub-age">Ages 0–5 · With Mum</div>
-          <h3 class="hub-name">For the Early Years &amp; the Mums Living Them</h3>
-          <p class="hub-desc">Term-style morning classes for babies, toddlers and pre-schoolers — attended together with mum. Music, movement, sensory play and a proper cup of tea after every session.</p>
-          <div class="hub-tags">
-            <span class="hub-tag">Music &amp; Movement</span>
-            <span class="hub-tag">Sensory Play</span>
-            <span class="hub-tag">Creative Art</span>
-            <span class="hub-tag">Mum Socials</span>
-          </div>
-          <div class="hub-actions">
-            <a href="#enrol" class="hub-btn-primary" onclick="event.stopPropagation()">Register Now</a>
-            <span class="hub-btn-sec">Explore Cub Hub ↓</span>
-          </div>
-        </div>
+    <div class="why-grid r">
+      <div class="why-card">
+        <div class="wc-icon wi-t"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="5" r="2" stroke="#08beb7" stroke-width="1.8" stroke-linecap="round"/><path d="M4.5 10.5C4.5 8.8 5.8 7.5 7 7.5C8.2 7.5 9.5 8.8 9.5 10.5V14H4.5V10.5Z" stroke="#08beb7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 14L3 19M9.5 14L11 19" stroke="#08beb7" stroke-width="1.8" stroke-linecap="round"/><circle cx="15" cy="4" r="2.5" stroke="#08beb7" stroke-width="1.8" stroke-linecap="round"/><path d="M11.5 10C11.5 8 12.9 6.5 15 6.5C17.1 6.5 18.5 8 18.5 10V14.5H11.5V10Z" stroke="#08beb7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.5 14.5L10 20M18.5 14.5L20 20" stroke="#08beb7" stroke-width="1.8" stroke-linecap="round"/><circle cx="23" cy="3" r="3" stroke="#08beb7" stroke-width="1.8" stroke-linecap="round"/><path d="M19 9.5C19 7 20.8 5.5 23 5.5C25.2 5.5 27 7 27 9.5V15H19V9.5Z" stroke="#08beb7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 15L17.5 21M27 15L28.5 21" stroke="#08beb7" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <div class="wc-title">Age-Appropriate Classes</div>
+        <div class="wc-desc">Activities designed specifically for each stage — from newborns to under-13s — so every child gets exactly what they need.</div>
       </div>
-
-      <!-- SPORTS HUB CARD -->
-      <div class="hub-card sport-card" onclick="toggleHub('sport')">
-        <div class="hub-photo">
-          <img src="assets/images/image-11-e615555699bb.jpg" alt="Sports Hub">
-          <div class="hub-photo-overlay"></div>
-          <span class="hub-badge badge-sport">Sports Hub</span>
-        </div>
-        <div class="hub-body">
-          <div class="hub-age">Ages 6–13 · U7 to U13</div>
-          <h3 class="hub-name">Their Team. Their Season to Shine.</h3>
-          <p class="hub-desc">Professional sports coaching across 6 codes for children aged 6–13. Qualified, vetted coaches. 10-week term structure. Indoor &amp; outdoor sessions, whatever the weather.</p>
-          <div class="hub-tags">
-            <span class="hub-tag">Hockey</span>
-            <span class="hub-tag">Netball</span>
-            <span class="hub-tag">Soccer</span>
-            <span class="hub-tag">Rugby</span>
-            <span class="hub-tag">Fitness &amp; Agility</span>
-          </div>
-          <div class="hub-actions">
-            <a href="#enrol" class="hub-btn-primary" onclick="event.stopPropagation()">Register Now</a>
-            <span class="hub-btn-sec">Explore Sports Hub ↓</span>
-          </div>
-        </div>
+      <div class="why-card">
+        <div class="wc-icon wi-o"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="19" cy="4.5" r="2.5" stroke="#ff7600" stroke-width="1.8"/><path d="M14 10L17 8L20 11.5L23 9" stroke="#ff7600" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 8L15 14L11 17" stroke="#ff7600" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 14L18 18L21 15" stroke="#ff7600" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 13H7" stroke="#ff7600" stroke-width="1.8" stroke-linecap="round"/><path d="M2 17H6" stroke="#ff7600" stroke-width="1.8" stroke-linecap="round"/><path d="M4 21H8" stroke="#ff7600" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <div class="wc-title">Healthy, Active Fun</div>
+        <div class="wc-desc">Getting active, out of the house, and away from devices — engaging in safe, joyful play that builds bodies and minds alike.</div>
+      </div>
+      <div class="why-card">
+        <div class="wc-icon wi-n"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="16" r="8" stroke="#0e1164" stroke-width="1.8"/><path d="M14 12.5L15.2 14.9L17.8 15.3L15.9 17.2L16.4 19.8L14 18.5L11.6 19.8L12.1 17.2L10.2 15.3L12.8 14.9L14 12.5Z" stroke="#0e1164" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 7.5L14 3L17.5 7.5" stroke="#0e1164" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.5 7.5H16.5" stroke="#0e1164" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <div class="wc-title">Qualified Coaches &amp; Leaders</div>
+        <div class="wc-desc">Hand-picked for their qualifications and their ability to genuinely connect with the age groups they lead. Quality is non-negotiable.</div>
+      </div>
+      <div class="why-card">
+        <div class="wc-icon wi-l"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="5" r="3" stroke="#a6cc3b" stroke-width="1.8"/><path d="M9 15C9 12 11 9.5 14 9.5C17 9.5 19 12 19 15" stroke="#a6cc3b" stroke-width="1.8" stroke-linecap="round"/><circle cx="5" cy="9" r="2.5" stroke="#a6cc3b" stroke-width="1.8"/><path d="M1.5 18C1.5 15.5 3.2 13.5 5 13.5C6.8 13.5 8.5 15.5 8.5 18" stroke="#a6cc3b" stroke-width="1.8" stroke-linecap="round"/><circle cx="23" cy="9" r="2.5" stroke="#a6cc3b" stroke-width="1.8"/><path d="M19.5 18C19.5 15.5 21.2 13.5 23 13.5C24.8 13.5 26.5 15.5 26.5 18" stroke="#a6cc3b" stroke-width="1.8" stroke-linecap="round"/><path d="M8 20C9.5 22 11.5 23 14 23C16.5 23 18.5 22 20 20" stroke="#a6cc3b" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <div class="wc-title">Real Community Building</div>
+        <div class="wc-desc">In-person friendships and true connections built through teamwork and play — the kind screens simply cannot replicate.</div>
       </div>
     </div>
+    <div class="screen-beat r">
+      <div class="sb-text"><strong>Team Time</strong> beats <span>Screen Time</span>. Every. Single. Time.</div>
+      <div class="sb-pill">Launching Term 3 · July 2026</div>
+    </div>
+  </div>
+</section>
 
-    <!-- CUB HUB EXPANDED -->
-    <div class="hub-panel" id="cub-panel">
-      <div class="cub-expanded">
-        <div class="deco-shapes">
-          <div class="deco-shape ds1"></div><div class="deco-shape ds2"></div><div class="deco-shape ds3"></div>
+<!-- CUB HUB -->
+<section class="cub" id="cub-hub" style="--sec-eye-col:#0e1164;position:relative">
+  <div class="deco-shapes"><div class="deco-shape ds1"></div><div class="deco-shape ds2"></div><div class="deco-shape ds3"></div><div class="deco-shape ds4"></div><div class="deco-shape ds5"></div></div>
+  <div class="wrap">
+    <div class="cub-grid" style="position:relative;z-index:1">
+      <div class="r">
+        <span class="div-badge db-n">Cub Hub</span>
+        <h2 class="sec-title">For the Early Years.<br><span style="color:var(--teal)">And the Mums Living Them.</span></h2>
+        <div class="cub-accent-strip">
+          <span class="cas"><span class="cas-dot" style="background:var(--lime)"></span>Music &amp; Movement</span>
+          <span class="cas"><span class="cas-dot" style="background:var(--peach)"></span>Sensory Play</span>
+          <span class="cas"><span class="cas-dot" style="background:var(--teal)"></span>Creative Art</span>
+          <span class="cas"><span class="cas-dot" style="background:var(--orange)"></span>Gross Motor Skills</span>
+          <span class="cas"><span class="cas-dot" style="background:var(--lime)"></span>Mum &amp; Baby Socials</span>
         </div>
-        <div class="wrap">
-          <div class="cub-expanded-grid">
-            <div>
-              <span class="div-badge" style="background:var(--navy);color:#fff">Cub Hub</span>
-              <h2 class="sec-title" style="color:var(--navy)">For the Early Years.<br>And the Mums Living Them.</h2>
-              <div class="cub-accent-strip">
-                <span class="cas"><span class="cas-dot" style="background:var(--lime)"></span>Music &amp; Movement</span>
-                <span class="cas"><span class="cas-dot" style="background:var(--peach)"></span>Sensory Play</span>
-                <span class="cas"><span class="cas-dot" style="background:var(--teal)"></span>Creative Art</span>
-                <span class="cas"><span class="cas-dot" style="background:var(--orange)"></span>Gross Motor Skills</span>
-                <span class="cas"><span class="cas-dot" style="background:var(--lime)"></span>Mum &amp; Baby Socials</span>
-              </div>
-              <p style="color:var(--mid);font-size:.97rem;line-height:1.85;margin-bottom:1rem">The early years are extraordinary. They are also exhausting, isolating, and relentless — especially if you are far from family or still finding your feet in a new town.</p>
-              <p style="color:var(--mid);font-size:.97rem;line-height:1.85;margin-bottom:1rem">Cub Hub was created for exactly this season of life. Our term-style 10-week classes create welcoming spaces that nurture genuine connections and real friendships — for little ones and their mums.</p>
-              <p style="color:var(--mid);font-size:.97rem;line-height:1.85;margin-bottom:1.5rem">Music mornings, creative art play, and gross motor activities help babies and toddlers build confidence, stay active, and make their first friends — while the grown-ups get a proper cup of tea and some conversation worth having.</p>
-              <ul class="feat-list">
-                <li>Monday &amp; Friday morning groups — attend one session per week</li>
-                <li>Qualified early childhood development practitioners</li>
-                <li>Social time with refreshments after every session</li>
-                <li>R1,350 per term · 10 sessions</li>
-                <li>Minimum 10 · maximum 20 participants per group — first come, first served</li>
-              </ul>
-            </div>
-            <div>
-              <div class="cub-vis">
-                <div class="cub-note">
-                  <div class="cn-title">Made for mums too</div>
-                  <div class="cn-sub">Every session ends with tea, coffee, and real conversation — because parents need community just as much as the little ones do.</div>
-                </div>
-                <div class="cub-stats-warm">
-                  <div class="csw"><div class="csw-n" style="color:var(--lime)">3</div><div class="csw-l">Age Groups</div></div>
-                  <div class="csw"><div class="csw-n" style="color:var(--peach)">10</div><div class="csw-l">Weeks</div></div>
-                  <div class="csw"><div class="csw-n" style="color:var(--teal)">≤20</div><div class="csw-l">Per Class</div></div>
-                </div>
-                <div class="ag"><div class="ag-dot ad-t"></div><div><div class="ag-name">Babies &amp; Crawlers</div></div><div class="ag-det">0–18 months · Mon &amp; Fri 08:30</div></div>
-                <div class="ag"><div class="ag-dot ad-o"></div><div><div class="ag-name">Toddlers</div></div><div class="ag-det">18m–3y · Mon &amp; Fri 09:30</div></div>
-                <div class="ag"><div class="ag-dot ad-l"></div><div><div class="ag-name">Pre-Schoolers</div></div><div class="ag-det">3–5y · Mon &amp; Fri 10:30</div></div>
-              </div>
-            </div>
+        <div class="cub-body">
+          <p>The early years are extraordinary. They are also exhausting, isolating, and relentless — especially if you are far from family or still finding your feet in a new town.</p>
+          <p>Cub Hub was created for exactly this season of life. Our term-style 10-week classes create welcoming spaces that nurture genuine connections and real friendships — for little ones and their mums.</p>
+          <p>Music mornings, creative art play, and gross motor activities help babies and toddlers build confidence, stay active, and make their first friends — while the grown-ups get a proper cup of tea and some conversation worth having.</p>
+        </div>
+        <ul class="feat-list">
+          <li>Monday &amp; Friday morning groups for every age band — attend one session per week</li>
+          <li>Qualified early childhood development practitioners</li>
+          <li>Social time with refreshments after every session</li>
+          <li>Safe, welcoming venue in George — confirmed before the term starts</li>
+          <li>R1,350 per term · 10 sessions</li>
+          <li>Minimum 10 · maximum 20 participants per group — places filled first come, first served</li>
+        </ul>
+        </div>
+      <div class="r r2">
+        <div class="cub-vis">
+          <div class="cub-note">
+            <div class="cn-title">Made for mums too</div>
+            <div class="cn-sub">Every session ends with tea, coffee, and real conversation — because parents need community just as much as the little ones do.</div>
           </div>
-          <!-- Age group cards -->
-          <div class="sport-cards r" style="margin-top:2.5rem">
-            <div class="sc" data-sport="cub-babies">
-              <label class="sc-photo"><img src="assets/images/image-17-cub-babies-05d0313a72cc.jpg"></label>
-              <div class="sc-body"><div class="sc-name">Babies &amp; Crawlers</div><div class="sc-det">0–18 months · Senses, music &amp; bonding.</div>
-              <div class="sc-sched"><span class="sc-day pill-tues">One morning a week</span>
-              <div class="sc-slots"><div class="sc-slot wide"><span class="sa">Monday Group</span><span class="st">08:30–09:30</span></div><div class="sc-slot wide"><span class="sa">Friday Group</span><span class="st">08:30–09:30</span></div></div></div>
-              <a class="sc-more" href="#page-cub-babies">View full programme →</a></div>
-            </div>
-            <div class="sc" data-sport="cub-toddlers">
-              <label class="sc-photo"><img src="assets/images/image-18-cub-toddlers-e797131a9145.jpg"></label>
-              <div class="sc-body"><div class="sc-name">Toddlers</div><div class="sc-det">18 months–3 years · Movement, mess &amp; first words.</div>
-              <div class="sc-sched"><span class="sc-day pill-thurs">One morning a week</span>
-              <div class="sc-slots"><div class="sc-slot wide"><span class="sa">Monday Group</span><span class="st">09:30–10:30</span></div><div class="sc-slot wide"><span class="sa">Friday Group</span><span class="st">09:30–10:30</span></div></div></div>
-              <a class="sc-more" href="#page-cub-toddlers">View full programme →</a></div>
-            </div>
-            <div class="sc" data-sport="cub-preschool">
-              <label class="sc-photo"><img src="assets/images/image-19-cub-preschool-a2c29361bd89.jpg"></label>
-              <div class="sc-body"><div class="sc-name">Pre-Schoolers</div><div class="sc-det">3–5 years · School-ready skills through play.</div>
-              <div class="sc-sched"><span class="sc-day pill-wed">One morning a week</span>
-              <div class="sc-slots"><div class="sc-slot wide"><span class="sa">Monday Group</span><span class="st">10:30–11:30</span></div><div class="sc-slot wide"><span class="sa">Friday Group</span><span class="st">10:30–11:30</span></div></div></div>
-              <a class="sc-more" href="#page-cub-preschool">View full programme →</a></div>
-            </div>
-          </div>
-          <div class="cub-expanded-close">
-            <button class="close-btn" onclick="toggleHub('cub')">↑ Close Cub Hub</button>
+          <div class="cub-stats-warm">
+            <div class="csw"><div class="csw-n" style="color:var(--lime)">6</div><div class="csw-l">Groups</div></div>
+            <div class="csw"><div class="csw-n" style="color:var(--peach)">10</div><div class="csw-l">Weeks</div></div>
+            <div class="csw"><div class="csw-n" style="color:var(--teal)">≤20</div><div class="csw-l">Per Class</div></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- SPORTS HUB EXPANDED -->
-    <div class="hub-panel" id="sport-panel">
-      <div class="sport-expanded">
-        <div class="wrap">
-          <div class="sport-expanded-intro">
-            <div>
-              <span class="div-badge db-t">Sports Hub</span>
-              <h2 class="sec-title">Their Team.<br>Their Season to Shine.</h2>
-              <div class="sports-body">
-                <p>Homeschooling and small private schools offer something remarkable — personalised learning, close-knit communities, and the freedom to thrive at your own pace. The one thing they can't always provide is a full team sports programme.</p>
-                <p>HuddleHub changes that. Our term-style 10-week programmes create a welcoming sporting environment where children develop real skills, make lasting friendships, and find their team.</p>
-              </div>
-              <ul class="feat-list">
-                <li>6 sports codes across 4 age groups (U7 · U9 · U11 · U13)</li>
-                <li>Qualified, vetted coaches with police clearance</li>
-                <li>Competitive team formation and inter-school opportunities</li>
-                <li>R1,350 per term · 10 sessions · 45 minutes each</li>
-                <li>Minimum 10 · maximum 20 per group — first come, first served</li>
-              </ul>
-            </div>
-            <div class="sport-cards">
-              <div class="sc" data-sport="hockey-boys"><label class="sc-photo"><img src="assets/images/image-11-e615555699bb.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0"></label><div class="sc-body"><div class="sc-name">Hockey — Boys</div><div class="sc-det">Skills to competitive team play.</div><div class="sc-sched"><span class="sc-day pill-tues">Tuesdays</span><div class="sc-slots"><div class="sc-slot"><span class="sa">U7</span><span class="st">14:00–14:45</span></div><div class="sc-slot"><span class="sa">U9</span><span class="st">14:45–15:30</span></div><div class="sc-slot"><span class="sa">U11</span><span class="st">15:30–16:15</span></div><div class="sc-slot"><span class="sa">U13</span><span class="st">16:15–17:00</span></div></div></div><a class="sc-more" href="#page-hockey-boys">View full programme →</a></div></div>
-              <div class="sc" data-sport="hockey-girls"><label class="sc-photo"><img src="assets/images/image-12-61a0cb8a080d.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0"></label><div class="sc-body"><div class="sc-name">Hockey — Girls</div><div class="sc-det">Passionate coaching for all levels.</div><div class="sc-sched"><span class="sc-day pill-thurs">Thursdays</span><div class="sc-slots"><div class="sc-slot"><span class="sa">U7</span><span class="st">14:00–14:45</span></div><div class="sc-slot"><span class="sa">U9</span><span class="st">14:45–15:30</span></div><div class="sc-slot"><span class="sa">U11</span><span class="st">15:30–16:15</span></div><div class="sc-slot"><span class="sa">U13</span><span class="st">16:15–17:00</span></div></div></div><a class="sc-more" href="#page-hockey-girls">View full programme →</a></div></div>
-              <div class="sc" data-sport="netball"><label class="sc-photo"><img src="assets/images/image-13-b46f13360d67.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0"></label><div class="sc-body"><div class="sc-name">Netball</div><div class="sc-det">Teamwork, agility and game sense.</div><div class="sc-sched"><span class="sc-day pill-tues">Tuesdays</span><div class="sc-slots"><div class="sc-slot"><span class="sa">U7</span><span class="st">14:00–14:45</span></div><div class="sc-slot"><span class="sa">U9</span><span class="st">14:45–15:30</span></div><div class="sc-slot"><span class="sa">U11</span><span class="st">15:30–16:15</span></div><div class="sc-slot"><span class="sa">U13</span><span class="st">16:15–17:00</span></div></div></div><a class="sc-more" href="#page-netball">View full programme →</a></div></div>
-              <div class="sc" data-sport="soccer"><label class="sc-photo"><img src="assets/images/image-14-10f660f4e2ca.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0"></label><div class="sc-body"><div class="sc-name">Soccer</div><div class="sc-det">The beautiful game, from the ground up.</div><div class="sc-sched"><span class="sc-day pill-thurs">Thursdays</span><div class="sc-slots"><div class="sc-slot"><span class="sa">U7</span><span class="st">14:00–14:45</span></div><div class="sc-slot"><span class="sa">U9</span><span class="st">14:45–15:30</span></div><div class="sc-slot"><span class="sa">U11</span><span class="st">15:30–16:15</span></div><div class="sc-slot"><span class="sa">U13</span><span class="st">16:15–17:00</span></div></div></div><a class="sc-more" href="#page-soccer">View full programme →</a></div></div>
-              <div class="sc" data-sport="rugby"><label class="sc-photo"><img src="assets/images/image-15-e7398a280d5a.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0"></label><div class="sc-body"><div class="sc-name">Rugby</div><div class="sc-det">Fundamentals in a structured environment.</div><div class="sc-sched"><span class="sc-day pill-tba">To be scheduled</span><div class="sc-tba">Register your interest and we'll notify you first when sessions are confirmed.</div></div><a class="sc-more" href="#page-rugby">View full programme →</a></div></div>
-              <div class="sc" data-sport="fitness"><label class="sc-photo"><img src="assets/images/image-16-eb31d6e197a3.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0"></label><div class="sc-body"><div class="sc-name">Fitness &amp; Agility</div><div class="sc-det">Age-appropriate conditioning &amp; movement.</div><div class="sc-sched"><span class="sc-day pill-wed">Wednesdays</span><div class="sc-slots"><div class="sc-slot wide"><span class="sa">Ages 6–9</span><span class="st">14:00–15:00</span></div><div class="sc-slot wide"><span class="sa">Ages 10–13</span><span class="st">15:00–16:00</span></div></div></div><a class="sc-more" href="#page-fitness">View full programme →</a></div></div>
-            </div>
+    <div class="sport-cards r" style="margin-top:2.5rem;position:relative;z-index:1">
+      <div class="sc" data-sport="cub-babies"><label class="sc-photo"><img src="assets/images/image-17-cub-babies-05d0313a72cc.jpg"></label><div class="sc-body"><div class="sc-name">Babies &amp; Crawlers</div><div class="sc-det">0–18 months · Senses, music &amp; bonding.</div><div class="sc-sched"><span class="sc-day pill-tues">One morning a week</span><div class="sc-slots"><div class="sc-slot wide"><span class="sa">Monday Group</span><span class="st">08:30–09:30</span></div><div class="sc-slot wide"><span class="sa">Friday Group</span><span class="st">08:30–09:30</span></div></div></div><a class="sc-more" href="#page-cub-babies">View full programme →</a></div></div>
+      <div class="sc" data-sport="cub-toddlers"><label class="sc-photo"><img src="assets/images/image-18-cub-toddlers-e797131a9145.jpg"></label><div class="sc-body"><div class="sc-name">Toddlers</div><div class="sc-det">18 months–3 years · Movement, mess &amp; first words.</div><div class="sc-sched"><span class="sc-day pill-thurs">One morning a week</span><div class="sc-slots"><div class="sc-slot wide"><span class="sa">Monday Group</span><span class="st">09:30–10:30</span></div><div class="sc-slot wide"><span class="sa">Friday Group</span><span class="st">09:30–10:30</span></div></div></div><a class="sc-more" href="#page-cub-toddlers">View full programme →</a></div></div>
+      <div class="sc" data-sport="cub-preschool"><label class="sc-photo"><img src="assets/images/image-19-cub-preschool-a2c29361bd89.jpg"></label><div class="sc-body"><div class="sc-name">Pre-Schoolers</div><div class="sc-det">3–5 years · A new sport every week. A lifelong love of sport starts here.</div><div class="sc-sched"><span class="sc-day pill-wed">One morning a week</span><div class="sc-slots"><div class="sc-slot wide"><span class="sa">Monday Group</span><span class="st">10:30–11:30</span></div><div class="sc-slot wide"><span class="sa">Friday Group</span><span class="st">10:30–11:30</span></div></div></div><a class="sc-more" href="#page-cub-preschool">View full programme →</a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SPORTS HUB -->
+<section class="sports" id="sports-hub">
+  <div class="wrap">
+    <div class="sports-intro r">
+      <div class="r">
+        <span class="div-badge db-t">Sports Hub</span>
+        <h2 class="sec-title">Their Team.<br><span style="color:var(--orange)">Their Season to Shine.</span></h2>
+        <div class="sports-body">
+          <p>Homeschooling and small private schools offer something remarkable — personalised learning, close-knit communities, and the freedom to thrive at your own pace. The one thing they can't always provide is a full team sports programme. That's exactly where HuddleHub steps in.</p>
+          <p>HuddleHub changes that. Our term-style 10-week programmes create a welcoming sporting environment where children develop real skills, make lasting friendships, and find their team.</p>
+          <p>Professional coaching in Hockey, Soccer, Netball, Rugby, Fitness and more helps young athletes build confidence, resilience and teamwork — one session at a time.</p>
+        </div>
+        <ul class="feat-list">
+          <li>5 sports codes across 4 age groups (U7 · U9 · U11 · U13)</li>
+          <li>Qualified, vetted coaches with police clearance</li>
+          <li>Competitive team formation and inter-school opportunities</li>
+          <li>R1,350 per term · 10 sessions · 45 minutes each</li>
+          <li>Minimum 10 · maximum 20 participants per group — places filled first come, first served</li>
+        </ul>
+      </div>
+      <!-- TIMETABLE BY DAY -->
+      <div class="r r2" style="width:100%">
+
+        <!-- TUESDAY -->
+        <div class="day-group" style="margin-bottom:2rem">
+          <div class="day-group-header">
+            <span class="sc-day pill-tues" style="font-size:0.95rem;padding:0.4rem 1.1rem">Tuesdays</span>
+            
           </div>
-          <div class="ten-week r">
-            <div class="tw-head"><div class="tw-title">How the 10 Weeks Work</div><div class="tw-sub">Every term blends indoor and outdoor sessions — flexed around George's weather, so no class is ever missed.</div></div>
-            <div class="tw-grid">
-              <div class="tw-card indoor"><div class="tw-num">6×</div><div class="tw-lab">Indoor Sessions · Skills &amp; Strategy</div><div class="tw-desc">At Triumph Indoor Sports Arena. Technique, decision-making and strategic game play — the smaller court means more touches and faster learning.</div></div>
-              <div class="tw-card outdoor"><div class="tw-num">4×</div><div class="tw-lab">Outdoor Sessions · Game Play</div><div class="tw-desc">At Carpe Diem School grounds. Realistic, full-field game play — real distances, positions and match conditions, finishing with a festival of matches.</div></div>
-              <div class="tw-card flex"><div class="tw-num">☔ → ☀</div><div class="tw-lab">Weather-Flexed</div><div class="tw-desc">Sessions flex around the forecast — rain never cancels a class, it just moves inside.</div></div>
-            </div>
-          </div>
-          <div class="sports-note r"><div class="vn-dot"></div><div>Timetable is indicative and subject to change. Rugby sessions to be scheduled — register your interest and we'll notify you first.</div></div>
-          <div class="sports-cta r"><a href="#enrol" class="sp-btn">Register Now</a></div>
-          <div class="sport-expanded-close">
-            <button class="close-btn" onclick="toggleHub('sport')" style="background:rgba(14,17,100,.08);border-color:rgba(14,17,100,.2);color:var(--navy)">↑ Close Sports Hub</button>
+          <div class="sport-cards" style="margin-top:0.75rem;grid-template-columns:repeat(2,1fr)">
+            <div class="sc" data-sport="hockey-boys"><label class="sc-photo"><img src="assets/images/image-11-e615555699bb.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;border-radius:0;"></label><div class="sc-body"><div class="sc-name">Hockey — Boys</div><div class="sc-det">Skills to competitive team play.</div><div class="sc-sched"><div class="sc-slots"><div class="sc-slot"><span class="sa">U7</span><span class="st">14:00–14:45</span></div><div class="sc-slot"><span class="sa">U9</span><span class="st">14:45–15:30</span></div><div class="sc-slot"><span class="sa">U11</span><span class="st">15:30–16:15</span></div><div class="sc-slot"><span class="sa">U13</span><span class="st">16:15–17:00</span></div></div></div><a class="sc-more" href="#page-hockey-boys">View full programme →</a></div></div>
+            <div class="sc" data-sport="netball"><label class="sc-photo"><img src="assets/images/image-13-b46f13360d67.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;border-radius:0;"></label><div class="sc-body"><div class="sc-name">Netball</div><div class="sc-det">Teamwork, agility and game sense.</div><div class="sc-sched"><div class="sc-slots"><div class="sc-slot"><span class="sa">U7</span><span class="st">14:00–14:45</span></div><div class="sc-slot"><span class="sa">U9</span><span class="st">14:45–15:30</span></div><div class="sc-slot"><span class="sa">U11</span><span class="st">15:30–16:15</span></div><div class="sc-slot"><span class="sa">U13</span><span class="st">16:15–17:00</span></div></div></div><a class="sc-more" href="#page-netball">View full programme →</a></div></div>
           </div>
         </div>
+
+        <!-- WEDNESDAY -->
+        <div class="day-group" style="margin-bottom:2rem">
+          <div class="day-group-header">
+            <span class="sc-day pill-wed" style="font-size:0.95rem;padding:0.4rem 1.1rem">Wednesdays</span>
+            
+          </div>
+          <div class="sport-cards" style="margin-top:0.75rem;grid-template-columns:1fr">
+            <div class="sc" data-sport="fitness"><label class="sc-photo"><img src="assets/images/image-16-eb31d6e197a3.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;border-radius:0;"></label><div class="sc-body"><div class="sc-name">Fitness &amp; Agility</div><div class="sc-det">Age-appropriate conditioning &amp; movement.</div><div class="sc-sched"><div class="sc-slots"><div class="sc-slot wide"><span class="sa">Ages 6–9</span><span class="st">14:00–15:00</span></div><div class="sc-slot wide"><span class="sa">Ages 10–13</span><span class="st">15:00–16:00</span></div></div></div><a class="sc-more" href="#page-fitness">View full programme →</a></div></div>
+          </div>
+        </div>
+
+        <!-- THURSDAY -->
+        <div class="day-group" style="margin-bottom:1rem">
+          <div class="day-group-header">
+            <span class="sc-day pill-thurs" style="font-size:0.95rem;padding:0.4rem 1.1rem">Thursdays</span>
+            
+          </div>
+          <div class="sport-cards" style="margin-top:0.75rem;grid-template-columns:repeat(3,1fr)">
+            <div class="sc" data-sport="hockey-girls"><label class="sc-photo"><img src="assets/images/image-12-61a0cb8a080d.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;border-radius:0;"></label><div class="sc-body"><div class="sc-name">Hockey — Girls</div><div class="sc-det">Passionate coaching for all levels.</div><div class="sc-sched"><div class="sc-slots"><div class="sc-slot"><span class="sa">U7</span><span class="st">14:00–14:45</span></div><div class="sc-slot"><span class="sa">U9</span><span class="st">14:45–15:30</span></div><div class="sc-slot"><span class="sa">U11</span><span class="st">15:30–16:15</span></div><div class="sc-slot"><span class="sa">U13</span><span class="st">16:15–17:00</span></div></div></div><a class="sc-more" href="#page-hockey-girls">View full programme →</a></div></div>
+            <div class="sc" data-sport="soccer"><label class="sc-photo"><img src="assets/images/image-14-10f660f4e2ca.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;border-radius:0;"></label><div class="sc-body"><div class="sc-name">Soccer</div><div class="sc-det">The beautiful game, from the ground up.</div><div class="sc-sched"><div class="sc-slots"><div class="sc-slot"><span class="sa">U7</span><span class="st">14:00–14:45</span></div><div class="sc-slot"><span class="sa">U9</span><span class="st">14:45–15:30</span></div><div class="sc-slot"><span class="sa">U11</span><span class="st">15:30–16:15</span></div><div class="sc-slot"><span class="sa">U13</span><span class="st">16:15–17:00</span></div></div></div><a class="sc-more" href="#page-soccer">View full programme →</a></div></div>
+            <div class="sc" data-sport="rugby"><label class="sc-photo"><img src="assets/images/image-15-e7398a280d5a.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;border-radius:0;"></label><div class="sc-body"><div class="sc-name">Rugby</div><div class="sc-det">Fundamentals in a structured environment.</div><div class="sc-sched"><div class="sc-slots"><div class="sc-slot"><span class="sa">U7</span><span class="st">14:00–15:00</span></div><div class="sc-slot"><span class="sa">U9</span><span class="st">15:00–16:00</span></div><div class="sc-slot"><span class="sa">U11</span><span class="st">16:00–17:00</span></div><div class="sc-slot"><span class="sa">U13</span><span class="st">17:00–18:00</span></div></div></div><a class="sc-more" href="#page-rugby">View full programme →</a></div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="ten-week r">
+      <div class="tw-head">
+        <div class="tw-title">How the 10 Weeks Work</div>
+        <div class="tw-sub">Every term blends indoor and outdoor sessions — flexed around George’s weather, so no class is ever missed.</div>
+      </div>
+      <div class="tw-grid">
+        <div class="tw-card indoor">
+          <div class="tw-num">6×</div>
+          <div class="tw-lab">Indoor Sessions · Skills &amp; Strategy</div>
+          <div class="tw-desc">At Triumph Indoor Sports Arena. Technique, decision-making and strategic game play — the smaller court means more touches and faster learning.</div>
+        </div>
+        <div class="tw-card outdoor">
+          <div class="tw-num">4×</div>
+          <div class="tw-lab">Outdoor Sessions · Game Play</div>
+          <div class="tw-desc">Realistic, full-field game play — real distances, positions and match conditions, finishing with a festival of matches.</div>
+        </div>
+        <div class="tw-card flex">
+          <div class="tw-num">☔ → ☀</div>
+          <div class="tw-lab">Weather-Flexed</div>
+          <div class="tw-desc">Indoor and outdoor sessions are scheduled around the forecast — rain never cancels a class, it just moves it inside.</div>
+        </div>
+      </div>
+    </div>
+    <div class="sports-note r"><div class="vn-dot"></div><div class="vn-text">Timetable is indicative and subject to change as final details are confirmed. Rugby now confirmed — Thursdays at Carpe Diem School, George.</div></div>
+    <div class="sports-cta r"><a href="#enrol" class="sp-btn">Register Now</a></div>
+  </div>
+</section>
+
+<!-- VENUE & TIMETABLE -->
+<section class="venue" id="venue">
+  <div class="wrap">
+    <div class="r">
+      <div class="sec-eye">Our Venues</div>
+      <h2 class="sec-title">Where to Find Us</h2>
+      <p class="sec-sub">HuddleHub Sports Hub sessions run across two venues in George — 6 indoor sessions at Triumph and 4 outdoor sessions at Carpe Diem School each term.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem" class="r">
+
+      <!-- TRIUMPH -->
+      <div class="r">
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem">
+          <span class="sc-day pill-tues" style="font-size:0.82rem">6× Indoor · Tues, Wed &amp; Thurs</span>
+        </div>
+        <div class="venue-map">
+          <iframe
+            src="https://www.google.com/maps?q=Triumph%20Indoor%20Sports%20Arena%2C%202%20Ring%20Street%2C%20George%20Industria%2C%20George%2C%206529&z=15&output=embed"
+            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map to Triumph Indoor Sports Arena">
+          </iframe>
+        </div>
+        <div class="venue-address" style="margin-top:0.75rem">
+          <div class="va-icon">🏟️</div>
+          <div>
+            <div class="va-name">Triumph Indoor Sports Arena</div>
+            <div class="va-addr">2 Ring Street, George Industria, George, 6529</div>
+            <div class="va-addr" style="margin-top:0.2rem">Hockey · Netball · Soccer · Fitness &amp; Agility</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARPE DIEM -->
+      <div class="r">
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem">
+          <span class="sc-day pill-thurs" style="font-size:0.82rem">4× Outdoor · Game Play Sessions</span>
+        </div>
+        <div class="venue-map">
+          <iframe
+            src="https://www.google.com/maps?q=Carpe+Diem+School+George+Lang+Street+Bos+en+Dal&z=15&output=embed"
+            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map to Carpe Diem School George">
+          </iframe>
+        </div>
+        <div class="venue-address" style="margin-top:0.75rem">
+          <div class="va-icon">🌿</div>
+          <div>
+            <div class="va-name">Carpe Diem School</div>
+            <div class="va-addr">Lang Street, Bos en Dal, George, 6529</div>
+            <div class="va-addr" style="margin-top:0.2rem">Hockey · Netball · Soccer · Rugby · Fitness &amp; Agility</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="venue-note r" style="margin-top:2rem">
+      <div class="vn-dot"></div>
+      <div class="vn-text">The indoor/outdoor split is weather-flexed — if outdoor conditions are unsuitable, sessions move indoors at Triumph. Parents are notified in advance via WhatsApp.</div>
+    </div>
+  </div>
+</section>
+
+<!-- COACH REGISTER -->
+<div style="background:var(--navy);padding:1.5rem 2rem;text-align:center">
+  <button onclick="document.getElementById('coaches-panel').style.display=document.getElementById('coaches-panel').style.display==='none'?'block':'none';this.textContent=this.textContent.includes('Show')?'Hide Coaching Opportunities ▲':'Show Coaching Opportunities ▼'" style="background:transparent;border:2px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.7);font-family:'Exo 2',sans-serif;font-weight:700;font-size:0.88rem;padding:0.6rem 1.5rem;border-radius:50px;cursor:pointer;transition:all .2s;letter-spacing:0.04em">Show Coaching Opportunities ▼</button>
+  <p style="font-size:0.78rem;color:rgba(255,255,255,0.4);margin-top:0.5rem;font-style:italic">Our coaching team is full for Term 3 — register your interest for future terms</p>
+</div>
+<div id="coaches-panel" style="display:none">
+<section class="coach-reg" id="coaches">
+  <div class="wrap">
+    <div class="cr-grid">
+      <div class="r">
+        <div class="sec-eye" style="color:var(--teal)">Join Our Team</div>
+        <h2 class="sec-title" style="color:#fff">Passionate About<br>Kids &amp; Community?</h2>
+        <p class="sec-sub" style="color:rgba(255,255,255,.68)">HuddleHub is built on the quality of the people who show up each week. We are looking for coaches, sports leaders, and Cub Hub practitioners who are as excited about this community as we are.</p>
+        <div class="cr-roles r r2">
+          <div class="cr-role">
+            <div class="cr-role-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="6" r="3.5" stroke="#08beb7" stroke-width="1.8"/><path d="M5 20C5 16.5 8 13.5 12 13.5C16 13.5 19 16.5 19 20" stroke="#08beb7" stroke-width="1.8" stroke-linecap="round"/><path d="M16 8L22 6" stroke="#08beb7" stroke-width="1.8" stroke-linecap="round"/><path d="M16 10.5L22 11" stroke="#08beb7" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="cr-role-title">Sports Coach</div>
+              <div class="cr-role-desc">Hockey, Soccer, Netball, Rugby or Fitness — one sport, one afternoon per week, four age groups back to back, with the opportunity to expand into more age groups as we grow.</div>
+            </div>
+          </div>
+          <div class="cr-role">
+            <div class="cr-role-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="5" r="3" stroke="#ff7600" stroke-width="1.8"/><path d="M3 18C3 14.5 5.5 12 9 12" stroke="#ff7600" stroke-width="1.8" stroke-linecap="round"/><circle cx="4" cy="12" r="2" stroke="#ff7600" stroke-width="1.8"/><circle cx="18" cy="12" r="2" stroke="#ff7600" stroke-width="1.8"/><path d="M9 12C12 12 14 14 15 16" stroke="#ff7600" stroke-width="1.8" stroke-linecap="round"/><path d="M4 14C4 17 6 19 9 19H15" stroke="#ff7600" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div class="cr-role-title">Cub Hub Leader</div>
+              <div class="cr-role-desc">Early childhood development practitioners for our Babies, Toddlers and Pre-Schooler sessions.</div>
+            </div>
+          </div>
+          <div class="cr-role">
+            <div class="cr-role-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L13.8 8.5H19.5L14.9 11.8L16.7 17.3L12 14L7.3 17.3L9.1 11.8L4.5 8.5H10.2L12 3Z" stroke="#a6cc3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div class="cr-role-title">Hub Assistant</div>
+              <div class="cr-role-desc">Support coaches and leaders across sessions — great for students, gap-year candidates, and those wanting to get started in coaching.</div>
+            </div>
+          </div>
+        </div>
+        <div class="cr-perks r r3">
+          <div class="cr-perk"><span class="cp-dot"></span>Competitive session-based pay benchmarked to the George market</div>
+          <div class="cr-perk"><span class="cp-dot"></span>Performance bonuses linked to retention and parent satisfaction</div>
+          <div class="cr-perk"><span class="cp-dot"></span>A guaranteed half-day block — not a single 45-minute slot</div>
+          <div class="cr-perk"><span class="cp-dot"></span>A career pathway — from coach through to franchise trainer</div>
+          <div class="cr-perk"><span class="cp-dot"></span>A values-driven team that genuinely cares about this community</div>
+        </div>
+      </div>
+      <div class="fcard r r2">
+        <div class="ft">Register Your Interest</div>
+        <div class="fs">Tell us a little about yourself and we'll be in touch.</div>
+        <form name="coach-application" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-meta-event="Lead" data-success="✓ Application received! We will be in touch soon." data-success-color="#2a9d5c" onsubmit="handleNetlifyForm(event)">
+          <input type="hidden" name="form-name" value="coach-application">
+          <p class="bot-field"><label>Leave this field empty <input name="bot-field"></label></p>
+          <div class="frow">
+            <div class="fg"><label>Full Name</label><input type="text" name="full-name" placeholder="Your full name" required></div>
+            <div class="fg"><label>Phone Number</label><input type="tel" name="phone" placeholder="076 123 4567"></div>
+          </div>
+          <div class="fg"><label>Email Address</label><input type="email" name="email" placeholder="your@email.com" required></div>
+          <div class="fg"><label>Role You're Interested In</label>
+            <select name="role">
+              <option value="">Select a role</option>
+              <option>Sports Coach — Hockey</option>
+              <option>Sports Coach — Soccer</option>
+              <option>Sports Coach — Netball</option>
+              <option>Sports Coach — Rugby</option>
+              <option>Sports Coach — Fitness</option>
+              <option>Cub Hub Leader</option>
+              <option>Hub Assistant</option>
+              <option>Open to any role</option>
+            </select>
+          </div>
+          <div class="fg"><label>Relevant Qualifications or Experience</label><textarea name="experience" placeholder="Tell us about your coaching experience, qualifications, or relevant background..."></textarea></div>
+          <div class="fg"><label>Availability</label>
+            <select name="availability">
+              <option value="">Select availability</option>
+              <option>Weekend mornings only</option>
+              <option>Weekday mornings</option>
+              <option>Flexible — tell me more</option>
+            </select>
+          </div>
+          <button type="submit" class="fsub" style="background:var(--teal)">Send My Application →</button>
+          <p class="fn">We'll review your details and be in touch within 3 business days.</p>
+        </form>
       </div>
     </div>
   </div>
 </section>
+</div>
 
 <!-- PRICING -->
 <section class="pricing" id="pricing">
@@ -738,7 +991,7 @@ body.sp-open{overflow:hidden}
         <p class="pc-per">Per child · 10 sessions · 45 min each</p>
         <ul class="pc-feats">
           <li>Ages 6–13, U7 to U13 age groups</li>
-          <li>6 sports codes available</li>
+          <li>5 sports codes available</li>
           <li>Qualified, police-cleared coaches</li>
           <li>Age-appropriate team coaching</li>
           <li>Competitive team formation</li>
@@ -747,185 +1000,12 @@ body.sp-open{overflow:hidden}
       </div>
     </div>
     <div class="discount-note r">
-      <div class="dn-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="9" stroke="#08beb7" stroke-width="1.8"/><path d="M7.5 14.5L14.5 7.5" stroke="#08beb7" stroke-width="1.8" stroke-linecap="round"/><circle cx="8" cy="8" r="1.5" stroke="#08beb7" stroke-width="1.5"/><circle cx="14" cy="14" r="1.5" stroke="#08beb7" stroke-width="1.5"/></svg></div>
+      <div class="dn-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="9" stroke="#08beb7" stroke-width="1.8"/><path d="M7.5 14.5L14.5 7.5" stroke="#08beb7" stroke-width="1.8" stroke-linecap="round"/><circle cx="8" cy="8" r="1.5" stroke="#08beb7" stroke-width="1.5"/><circle cx="14" cy="14" r="1.5" stroke="#08beb7" stroke-width="1.5"/></svg>
+      </div>
       <div>
-        <div class="dn-title">10% off every additional group you book — within your family</div>
-        <div class="dn-sub">Enrol a child in a second sport, add a Cub Hub class, or bring another sibling — each additional group across your family receives a 10% discount. This discount applies per household only and cannot be shared with or transferred to other families.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY CHOOSE -->
-<section class="why" id="why">
-  <div class="wrap">
-    <div class="r" style="text-align:center">
-      <div class="sec-eye" style="justify-content:center">Why Choose HuddleHub</div>
-      <h2 class="sec-title" style="text-align:center">Everything Your Child Needs.<br>In One Place.</h2>
-    </div>
-    <div class="why-grid r">
-      <div class="why-card">
-        <div class="wc-icon wi-t"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="5" r="2" stroke="#08beb7" stroke-width="1.8" stroke-linecap="round"/><path d="M4.5 10.5C4.5 8.8 5.8 7.5 7 7.5C8.2 7.5 9.5 8.8 9.5 10.5V14H4.5V10.5Z" stroke="#08beb7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 14L3 19M9.5 14L11 19" stroke="#08beb7" stroke-width="1.8" stroke-linecap="round"/><circle cx="15" cy="4" r="2.5" stroke="#08beb7" stroke-width="1.8" stroke-linecap="round"/><path d="M11.5 10C11.5 8 12.9 6.5 15 6.5C17.1 6.5 18.5 8 18.5 10V14.5H11.5V10Z" stroke="#08beb7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.5 14.5L10 20M18.5 14.5L20 20" stroke="#08beb7" stroke-width="1.8" stroke-linecap="round"/><circle cx="23" cy="3" r="3" stroke="#08beb7" stroke-width="1.8" stroke-linecap="round"/><path d="M19 9.5C19 7 20.8 5.5 23 5.5C25.2 5.5 27 7 27 9.5V15H19V9.5Z" stroke="#08beb7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 15L17.5 21M27 15L28.5 21" stroke="#08beb7" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-        <div class="wc-title">Age-Appropriate Classes</div>
-        <div class="wc-desc">Activities designed specifically for each stage — from newborns to under-13s — so every child gets exactly what they need.</div>
-      </div>
-      <div class="why-card">
-        <div class="wc-icon wi-o"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="19" cy="4.5" r="2.5" stroke="#ff7600" stroke-width="1.8"/><path d="M14 10L17 8L20 11.5L23 9" stroke="#ff7600" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 8L15 14L11 17" stroke="#ff7600" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 14L18 18L21 15" stroke="#ff7600" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 13H7" stroke="#ff7600" stroke-width="1.8" stroke-linecap="round"/><path d="M2 17H6" stroke="#ff7600" stroke-width="1.8" stroke-linecap="round"/><path d="M4 21H8" stroke="#ff7600" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-        <div class="wc-title">Healthy, Active Fun</div>
-        <div class="wc-desc">Getting active, out of the house, and away from devices — engaging in safe, joyful play that builds bodies and minds alike.</div>
-      </div>
-      <div class="why-card">
-        <div class="wc-icon wi-n"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="16" r="8" stroke="#0e1164" stroke-width="1.8"/><path d="M14 12.5L15.2 14.9L17.8 15.3L15.9 17.2L16.4 19.8L14 18.5L11.6 19.8L12.1 17.2L10.2 15.3L12.8 14.9L14 12.5Z" stroke="#0e1164" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 7.5L14 3L17.5 7.5" stroke="#0e1164" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.5 7.5H16.5" stroke="#0e1164" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-        <div class="wc-title">Qualified Coaches &amp; Leaders</div>
-        <div class="wc-desc">Hand-picked for their qualifications and their ability to genuinely connect with the age groups they lead. Quality is non-negotiable.</div>
-      </div>
-      <div class="why-card">
-        <div class="wc-icon wi-l"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="5" r="3" stroke="#a6cc3b" stroke-width="1.8"/><path d="M9 15C9 12 11 9.5 14 9.5C17 9.5 19 12 19 15" stroke="#a6cc3b" stroke-width="1.8" stroke-linecap="round"/><circle cx="5" cy="9" r="2.5" stroke="#a6cc3b" stroke-width="1.8"/><path d="M1.5 18C1.5 15.5 3.2 13.5 5 13.5C6.8 13.5 8.5 15.5 8.5 18" stroke="#a6cc3b" stroke-width="1.8" stroke-linecap="round"/><circle cx="23" cy="9" r="2.5" stroke="#a6cc3b" stroke-width="1.8"/><path d="M19.5 18C19.5 15.5 21.2 13.5 23 13.5C24.8 13.5 26.5 15.5 26.5 18" stroke="#a6cc3b" stroke-width="1.8" stroke-linecap="round"/><path d="M8 20C9.5 22 11.5 23 14 23C16.5 23 18.5 22 20 20" stroke="#a6cc3b" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-        <div class="wc-title">Real Community Building</div>
-        <div class="wc-desc">In-person friendships and true connections built through teamwork and play — the kind screens simply cannot replicate.</div>
-      </div>
-    </div>
-    <div class="screen-beat r">
-      <div class="sb-text">Beating <span>Screen Time</span> with <em>Team Time</em> — one session at a time.</div>
-      <div class="sb-pill">Launching Term 3 · July 2026</div>
-    </div>
-  </div>
-</section>
-
-<!-- VENUE -->
-<section class="venue" id="venue">
-  <div class="wrap">
-    <div class="r">
-      <div class="sec-eye">Our Venues</div>
-      <h2 class="sec-title">Where to Find Us</h2>
-      <p class="sec-sub">Sessions take place across two venues in George — one world-class indoor arena for skills and strategy, and a great outdoor space for full-field game play.</p>
-    </div>
-    <div class="venue-grid r">
-      <div class="venue-card vc-indoor">
-        <div class="vc-map">
-          <iframe src="https://www.google.com/maps?q=Triumph%20Indoor%20Sports%20Arena%2C%202%20Ring%20Street%2C%20George%20Industria%2C%20George%2C%206529&z=15&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Triumph Indoor Sports Arena"></iframe>
-        </div>
-        <div class="vc-body">
-          <div class="vc-badge vc-badge-indoor">🏟 Indoor Sessions</div>
-          <div class="vc-name">Triumph Indoor Sports Arena</div>
-          <div class="vc-tag">A world-class indoor arena for skills, drills and match strategy.</div>
-          <div class="vc-addr"><span class="ic">📍</span><span>2 Ring Street, George Industria, George, 6529</span></div>
-          <div class="vc-meta"><span class="ic">📞</span><a href="tel:+27664391913">066 439 1913</a></div>
-        </div>
-      </div>
-      <div class="venue-card vc-outdoor">
-        <div class="vc-map">
-          <iframe src="https://www.google.com/maps?q=Carpe%20Diem%20School%2C%20Lang%20Street%2C%20Bos%20en%20Dal%2C%20George%2C%206529&z=15&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Carpe Diem School — Outdoor Sessions"></iframe>
-        </div>
-        <div class="vc-body">
-          <div class="vc-badge vc-badge-outdoor">🌿 Outdoor Sessions</div>
-          <div class="vc-name">Carpe Diem School</div>
-          <div class="vc-tag">Full-field game play — real distances, real positions, real match conditions.</div>
-          <div class="vc-addr"><span class="ic">📍</span><span>Lang Street, Bos en Dal, George, 6529</span></div>
-          <div class="vc-meta"><span class="ic">📅</span>4 outdoor sessions per term</div>
-        </div>
-      </div>
-    </div>
-    <div class="tw-explained r">
-      <div class="tw-explained-title">How the venues work together</div>
-      <div class="tw-explained-grid">
-        <div class="twe-card twe-indoor">
-          <div class="twe-n">6×</div>
-          <div class="twe-label">Indoor · Skills</div>
-          <div class="twe-loc">Triumph Indoor Sports Arena</div>
-        </div>
-        <div class="twe-card twe-outdoor">
-          <div class="twe-n">4×</div>
-          <div class="twe-label">Outdoor · Game Play</div>
-          <div class="twe-loc">Carpe Diem School</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- JOIN OUR TEAM -->
-<section class="coaches-teaser" id="coaches">
-  <div class="wrap">
-    <div class="r" style="text-align:center">
-      <div class="sec-eye" style="justify-content:center">Join Our Team</div>
-      <h2 class="sec-title" style="text-align:center">Passionate About<br>Kids &amp; Community?</h2>
-      <p class="sec-sub" style="margin:0 auto;text-align:center">We are looking for coaches, Cub Hub practitioners and assistants who are as excited about this community as we are.</p>
-    </div>
-    <div class="ct-grid r">
-      <div class="ct-card">
-        <div class="ct-icon" style="background:rgba(8,190,183,.15)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="6" r="3.5" stroke="#08beb7" stroke-width="1.8"/><path d="M5 20C5 16.5 8 13.5 12 13.5C16 13.5 19 16.5 19 20" stroke="#08beb7" stroke-width="1.8" stroke-linecap="round"/><path d="M16 8L22 6" stroke="#08beb7" stroke-width="1.8" stroke-linecap="round"/><path d="M16 10.5L22 11" stroke="#08beb7" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-        <div class="ct-title">Sports Coach</div>
-        <div class="ct-desc">Hockey, Soccer, Netball, Rugby or Fitness — one afternoon per week, four age groups back to back, with a clear career pathway.</div>
-      </div>
-      <div class="ct-card">
-        <div class="ct-icon" style="background:rgba(255,118,0,.15)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="5" r="3" stroke="#ff7600" stroke-width="1.8"/><path d="M3 18C3 14.5 5.5 12 9 12" stroke="#ff7600" stroke-width="1.8" stroke-linecap="round"/><circle cx="4" cy="12" r="2" stroke="#ff7600" stroke-width="1.8"/><circle cx="18" cy="12" r="2" stroke="#ff7600" stroke-width="1.8"/><path d="M9 12C12 12 14 14 15 16" stroke="#ff7600" stroke-width="1.8" stroke-linecap="round"/><path d="M4 14C4 17 6 19 9 19H15" stroke="#ff7600" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-        <div class="ct-title">Cub Hub Leader</div>
-        <div class="ct-desc">Early childhood development practitioners for our Babies, Toddlers and Pre-Schooler morning sessions.</div>
-      </div>
-      <div class="ct-card">
-        <div class="ct-icon" style="background:rgba(166,204,59,.15)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L13.8 8.5H19.5L14.9 11.8L16.7 17.3L12 14L7.3 17.3L9.1 11.8L4.5 8.5H10.2L12 3Z" stroke="#a6cc3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div class="ct-title">Hub Assistant</div>
-        <div class="ct-desc">Support coaches and leaders across sessions — great for students, gap-year candidates, and those wanting to get started in coaching.</div>
-      </div>
-    </div>
-    <div class="ct-expand-btn r">
-      <button onclick="toggleCoaches()">See Full Details &amp; Apply →</button>
-    </div>
-
-    <!-- EXPANDED COACH SECTION -->
-    <div class="coach-expanded" id="coach-panel">
-      <div class="cr-grid">
-        <div>
-          <h3 style="font-family:'Exo 2',sans-serif;font-weight:900;color:#fff;font-size:1.35rem;margin-bottom:1rem">Why Join HuddleHub?</h3>
-          <div class="cr-perks">
-            <div class="cr-perk"><span class="cp-dot"></span>Competitive session-based pay benchmarked to the George market</div>
-            <div class="cr-perk"><span class="cp-dot"></span>Performance bonuses linked to retention and parent satisfaction</div>
-            <div class="cr-perk"><span class="cp-dot"></span>A guaranteed half-day block — not a single 45-minute slot</div>
-            <div class="cr-perk"><span class="cp-dot"></span>A career pathway — from coach through to franchise trainer</div>
-            <div class="cr-perk"><span class="cp-dot"></span>A values-driven team that genuinely cares about this community</div>
-          </div>
-        </div>
-        <div class="fcard">
-          <div class="ft">Register Your Interest</div>
-          <div class="fs">Tell us a little about yourself and we'll be in touch.</div>
-          <form name="coach-application" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-meta-event="Lead" data-success="✓ Application received! We will be in touch soon." data-success-color="#2a9d5c" onsubmit="handleNetlifyForm(event)">
-            <input type="hidden" name="form-name" value="coach-application">
-            <p class="bot-field"><label>Leave this field empty <input name="bot-field"></label></p>
-            <div class="frow">
-              <div class="fg"><label>Full Name</label><input type="text" name="full-name" placeholder="Your full name" required></div>
-              <div class="fg"><label>Phone Number</label><input type="tel" name="phone" placeholder="076 123 4567"></div>
-            </div>
-            <div class="fg"><label>Email Address</label><input type="email" name="email" placeholder="your@email.com" required></div>
-            <div class="fg"><label>Role You're Interested In</label>
-              <select name="role">
-                <option value="">Select a role</option>
-                <option>Sports Coach — Hockey</option>
-                <option>Sports Coach — Soccer</option>
-                <option>Sports Coach — Netball</option>
-                <option>Sports Coach — Rugby</option>
-                <option>Sports Coach — Fitness</option>
-                <option>Cub Hub Leader</option>
-                <option>Hub Assistant</option>
-                <option>Open to any role</option>
-              </select>
-            </div>
-            <div class="fg"><label>Relevant Qualifications or Experience</label><textarea name="experience" placeholder="Tell us about your coaching experience, qualifications, or relevant background..."></textarea></div>
-            <div class="fg"><label>Availability</label>
-              <select name="availability">
-                <option value="">Select availability</option>
-                <option>Weekday afternoons</option>
-                <option>Weekday mornings</option>
-                <option>Flexible — tell me more</option>
-              </select>
-            </div>
-            <button type="submit" class="fsub" style="background:var(--teal)">Send My Application →</button>
-            <p class="fn">We'll review your details and be in touch within 3 business days.</p>
-          </form>
-          <div style="text-align:center;margin-top:1rem">
-            <button onclick="toggleCoaches()" style="background:none;border:none;color:rgba(255,255,255,.5);font-family:'Exo 2',sans-serif;font-weight:700;font-size:.85rem;cursor:pointer">↑ Close</button>
-          </div>
-        </div>
+        <div class="dn-title">10% off every additional group you book</div>
+        <div class="dn-sub">Enrol a child in a second sport, add a Cub Hub class, or bring another child — each additional group across your family receives a 10% discount. The more you Huddle, the more you save.</div>
       </div>
     </div>
   </div>
@@ -936,10 +1016,10 @@ body.sp-open{overflow:hidden}
   <div class="enrol-inner">
     <div class="r">
       <div class="sec-eye">Get Involved</div>
-      <h2 class="sec-title" style="color:#fff">Find Your Tribe.</h2>
-      <p class="sec-sub" style="color:rgba(255,255,255,.68)">Term 3 2026 launches in July. Pre-register now and we'll be in touch as soon as enrolment opens — no commitment required.</p>
+      <h2 class="sec-title">Find Your Tribe.</h2>
+      <p class="sec-sub">Term 3 2026 launches in July. Pre-register now and we'll be in touch as soon as enrolment opens — no commitment required.</p>
       <ul class="e-highs">
-        <li><div class="e-ico">📍</div><div>Triumph Indoor Sports Arena &amp; Carpe Diem School, George</div></li>
+        <li><div class="e-ico">📍</div><div>George, Western Cape — venues confirmed before launch</div></li>
         <li><div class="e-ico">📅</div><div>Launching July 2026 · Four terms per year, school calendar aligned</div></li>
         <li><div class="e-ico">🔒</div><div>Full child safeguarding policy · Police-cleared coaches · First aid at every session</div></li>
         <li><div class="e-ico">📧</div><a href="mailto:info@huddlehub.co.za" style="color:var(--teal);text-decoration:none">info@huddlehub.co.za</a></li>
@@ -989,11 +1069,11 @@ body.sp-open{overflow:hidden}
       <div>
         <div class="fc-title">Programmes</div>
         <ul class="fl">
-          <li><a href="#hubs">Cub Hub (Ages 0–5)</a></li>
-          <li><a href="#hubs">Sports Hub (Ages 6–13)</a></li>
+          <li><a href="#cub-hub">Cub Hub (Ages 0–5)</a></li>
+          <li><a href="#sports-hub">Sports Hub (Ages 6–13)</a></li>
           <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#venue">Our Venues</a></li>
-          <li><a href="#coaches">Join Our Team</a></li>
+          <li><a href="#venue">Venue &amp; Times</a></li>
+          <li><a href="#coaches" onclick="setTimeout(()=>{var p=document.getElementById('coaches-panel');if(p)p.style.display='block'},100)">Join Our Team</a></li>
           <li><a href="#enrol">Register Interest</a></li>
         </ul>
       </div>
@@ -1007,11 +1087,13 @@ body.sp-open{overflow:hidden}
       </div>
     </div>
     <div class="ft-bot">
-      <p>© 2026 HuddleHub · Nexair Industries (Pty) Ltd · George, Western Cape · All rights reserved</p>
+      <p>© 2026 HuddleHub · George, Western Cape · All rights reserved</p>
       <div><span class="bp">Gather</span><span class="bp">Connect</span><span class="bp">Belong</span></div>
     </div>
   </div>
 </footer>
+
+
 
 <section class="sport-page" id="page-hockey-boys">
   <div class="sp-hero">
@@ -1235,7 +1317,7 @@ body.sp-open{overflow:hidden}
     <div class="sp-hero-grad"></div>
     <div class="sp-hero-content">
       <a class="sp-back" href="#sports-hub">← Back to Sports Hub</a><br>
-      <span class="sc-day pill-tba">Schedule to be confirmed</span>
+      <span class="sc-day pill-thurs">Thursdays</span>
       <h1>Rugby</h1>
       <p class="sp-tag">Fundamentals in a structured, age-appropriate environment.</p>
     </div>
@@ -1253,14 +1335,15 @@ body.sp-open{overflow:hidden}
       <aside class="sp-side">
         <div class="sp-card">
           <div class="sp-card-t">Session Times</div>
-          <span class="sc-day pill-tba" style="margin-bottom:.7rem">Schedule to be confirmed</span>
-          <div class="sc-tba" style="font-size:.85rem">Sessions to be scheduled — register your interest below and we’ll notify you first when days and times are confirmed.</div>
+          <span class="sc-day pill-thurs" style="margin-bottom:.7rem">Thursdays</span>
+          <div class="sc-slots"><div class="sc-slot wide"><span class="sa">U7</span><span class="st">14:00–15:00</span></div><div class="sc-slot wide"><span class="sa">U9</span><span class="st">15:00–16:00</span></div><div class="sc-slot wide"><span class="sa">U11</span><span class="st">16:00–17:00</span></div><div class="sc-slot wide"><span class="sa">U13</span><span class="st">17:00–18:00</span></div></div>
+          <div style="font-size:.8rem;color:var(--mid);margin-top:.5rem;">Carpe Diem School, Bos en Dal, George</div>
         </div>
         <div class="sp-card">
           <div class="sp-card-t">Pricing</div>
           <div class="sp-price-amt">R1,350<span>/term</span></div>
-          <div class="sp-price-meta">Per child · 10 sessions · 45 min each · U7 to U13<br>10% off every additional group your family books.</div>
-          <a href="#enrol" class="sp-btn">Register Interest</a>
+          <div class="sp-price-meta">Per child · 10 sessions · 60 min each · U7 to U13<br>10% off every additional group your family books.</div>
+          <a href="#enrol" class="sp-btn">Register Now</a>
         </div>
       </aside>
     </div>
@@ -1483,123 +1566,108 @@ body.sp-open{overflow:hidden}
       </aside>
     </div>
     <div class="sp-struct">
-      <h2 class="sp-h2">The 10-Week Journey</h2>
-      <p class="sp-struct-sub">Every term follows a gentle progression — each phase builds on the last, guided by qualified early childhood development practitioners at a safe, welcoming venue in George (venue to be confirmed and announced before the term starts).</p>
+      <h2 class="sp-h2">The 10-Week Sport Rotation</h2>
+      <p class="sp-struct-sub">Every two sessions your child tries a brand new sport — introduced in a fun, age-appropriate way with no pressure and lots of encouragement. By the end of term they will have experienced six different sports and discovered what makes them light up.</p>
       <div class="sp-tracks">
         <div class="sp-track in">
-          <div class="sp-track-h">Sessions 1–6 · Foundations</div>
-          <div class="sp-track-s">Settling in, building trust, and developing the core skills of this age group.</div>
-          <div class="sp-phase"><span class="sp-ph-n">Settle & Belong</span><span class="sp-ph-s">Sessions 1–2</span><div class="sp-ph-d">Group routines, name games and station play — building comfort and belonging.</div></div><div class="sp-phase"><span class="sp-ph-n">Clever Hands</span><span class="sp-ph-s">Sessions 3–4</span><div class="sp-ph-d">Fine motor focus — cutting, threading, drawing and dough work.</div></div><div class="sp-phase"><span class="sp-ph-n">Big Moves</span><span class="sp-ph-s">Sessions 5–6</span><div class="sp-ph-d">Running, jumping, balancing, throwing and catching — the building blocks of all sport.</div></div>
+          <div class="sp-track-h">Sessions 1–6 · Sport Introduction</div>
+          <div class="sp-track-s">A new sport every two sessions — high energy, age-appropriate and genuinely fun.</div>
+          <div class="sp-phase"><span class="sp-ph-n">⚽ Soccer</span><span class="sp-ph-s">Sessions 1–2</span><div class="sp-ph-d">Kicking, dribbling and simple passing games — the beautiful game made tiny and joyful.</div></div>
+          <div class="sp-phase"><span class="sp-ph-n">🏑 Hockey</span><span class="sp-ph-s">Sessions 3–4</span><div class="sp-ph-d">Stick handling, ball control and team relay games — building coordination and confidence.</div></div>
+          <div class="sp-phase"><span class="sp-ph-n">🏀 Basketball</span><span class="sp-ph-s">Sessions 5–6</span><div class="sp-ph-d">Dribbling, passing and shooting at low hoops — balance, hand-eye coordination and pure fun.</div></div>
         </div>
         <div class="sp-track out">
-          <div class="sp-track-h">Sessions 7–10 · Bringing It Together</div>
-          <div class="sp-track-s">Skills come together in richer play — ending with a celebration the grown-ups join too.</div>
-          <div class="sp-phase"><span class="sp-ph-n">Imagine & Create</span><span class="sp-ph-s">Sessions 7–8</span><div class="sp-ph-d">Art projects, music and pretend-play that stretch imagination and expression.</div></div><div class="sp-phase"><span class="sp-ph-n">Show & Shine</span><span class="sp-ph-s">Sessions 9–10</span><div class="sp-ph-d">Group games bringing it all together, and a showcase morning for the families.</div></div>
+          <div class="sp-track-h">Sessions 7–10 · More Sports &amp; Showcase</div>
+          <div class="sp-track-s">Three more sports plus a final celebration session families join in too.</div>
+          <div class="sp-phase"><span class="sp-ph-n">🎾 Tennis</span><span class="sp-ph-s">Sessions 7–8</span><div class="sp-ph-d">Racket skills, rallying and movement games — agility and focus through play.</div></div>
+          <div class="sp-phase"><span class="sp-ph-n">🏏 Cricket</span><span class="sp-ph-s">Session 9</span><div class="sp-ph-d">Batting, catching and simple fielding — classic South African sport made accessible for tiny players.</div></div>
+          <div class="sp-phase"><span class="sp-ph-n">💪 Fitness &amp; Sport Showcase</span><span class="sp-ph-s">Session 10</span><div class="sp-ph-d">Movement circuits across all six sports — and a showcase morning where families join in and celebrate everything their little one discovered this term.</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-
 <script>
 function toggleMenu(){document.getElementById('mob').classList.toggle('open')}
 function closeMob(){document.getElementById('mob').classList.remove('open')}
 document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',closeMob));
 
-// Hub expand/collapse
-function toggleHub(hub){
-  var panel=document.getElementById(hub+'-panel');
-  var isOpen=panel.classList.contains('open');
-  // Close all panels first
-  document.querySelectorAll('.hub-panel').forEach(function(p){p.classList.remove('open')});
-  if(!isOpen){
-    panel.classList.add('open');
-    setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'start'})},50);
-  }
-}
-
-// Coach expand/collapse
-function toggleCoaches(){
-  var panel=document.getElementById('coach-panel');
-  panel.classList.toggle('open');
-  if(panel.classList.contains('open')){
-    setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'start'})},50);
-  }
-}
-
-// Scroll animations
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')});
 },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.r').forEach(el=>obs.observe(el));
 
-// Netlify form handler
+
 async function handleNetlifyForm(e){
   e.preventDefault();
-  const form=e.target;
-  const btn=form.querySelector('.fsub');
-  const originalText=btn.textContent;
-  btn.textContent='Sending...';
-  btn.disabled=true;
-  try{
-    const response=await fetch('/',{
-      method:'POST',
-      headers:{'Content-Type':'application/x-www-form-urlencoded'},
-      body:new URLSearchParams(new FormData(form)).toString()
+  const form = e.target;
+  const btn = form.querySelector('.fsub');
+  const originalText = btn.textContent;
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  try {
+    const response = await fetch('/', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: new URLSearchParams(new FormData(form)).toString()
     });
     if(!response.ok) throw new Error('Form submission failed');
     trackMetaEvent(form);
-    btn.textContent=form.dataset.success||originalText;
-    btn.style.background=form.dataset.successColor||'#2a9d5c';
+    btn.textContent = form.dataset.success || originalText;
+    btn.style.background = form.dataset.successColor || '#2a9d5c';
     form.reset();
-  }catch(err){
-    btn.textContent='Sorry, please email us instead.';
-    btn.style.background='#c2410c';
-    setTimeout(()=>{btn.textContent=originalText;btn.style.background='';btn.disabled=false;},3500);
+  } catch (err) {
+    btn.textContent = 'Sorry, please email us instead.';
+    btn.style.background = '#c2410c';
+    setTimeout(() => {
+      btn.textContent = originalText;
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 3500);
   }
 }
 
 function trackMetaEvent(form){
-  if(!form.dataset.metaEvent||typeof fbq!=='function') return;
-  fbq('track',form.dataset.metaEvent,{content_name:form.name||'form'});
+  if(!form.dataset.metaEvent || typeof fbq !== 'function') return;
+  fbq('track', form.dataset.metaEvent, {content_name: form.name || 'form'});
 }
-
-// Sport detail page routing
+</script>
+<script>
 function routeSport(){
-  var pages=document.querySelectorAll('.sport-page');
-  var m=location.hash.match(/^#page-([a-z-]+)$/);
-  var pg=m?document.getElementById('page-'+m[1]):null;
+  var pages = document.querySelectorAll('.sport-page');
+  var m = location.hash.match(/^#page-([a-z-]+)$/);
+  var pg = m ? document.getElementById('page-'+m[1]) : null;
   if(pg){
     pages.forEach(function(p){p.classList.remove('active')});
     pg.classList.add('active');
     document.body.classList.add('sp-open');
-    var card=document.querySelector('.sc[data-sport="'+m[1]+'"]');
-    var hero=pg.querySelector('.sp-hero-img');
-    var cubMap={'cub-babies':0,'cub-toddlers':1,'cub-preschool':0};
+    var card = document.querySelector('.sc[data-sport="'+m[1]+'"]');
+    var hero = pg.querySelector('.sp-hero-img');
+    var cubMap = {'cub-babies':0,'cub-toddlers':1,'cub-preschool':0};
     if(hero){
-      var imgs=card?card.querySelectorAll('label img'):[];
-      if(!imgs.length&&m[1] in cubMap){
-        var cimgs=document.querySelectorAll('.cub-photos label img');
-        if(cimgs.length) imgs=[cimgs[Math.min(cubMap[m[1]],cimgs.length-1)]];
+      var imgs = card ? card.querySelectorAll('label img') : [];
+      if(!imgs.length && m[1] in cubMap){
+        var cimgs = document.querySelectorAll('.cub-photos label img');
+        if(cimgs.length) imgs = [cimgs[Math.min(cubMap[m[1]], cimgs.length-1)]];
       }
-      if(imgs.length){hero.src=imgs[imgs.length-1].src;hero.style.display='block';}
-      else{hero.style.display='none';}
+      if(imgs.length){ hero.src = imgs[imgs.length-1].src; hero.style.display='block'; }
+      else { hero.style.display='none'; }
     }
     window.scrollTo(0,0);
     if(typeof closeMob==='function') closeMob();
   } else {
-    var wasOpen=document.body.classList.contains('sp-open');
+    var wasOpen = document.body.classList.contains('sp-open');
     document.body.classList.remove('sp-open');
     pages.forEach(function(p){p.classList.remove('active')});
-    if(wasOpen&&location.hash){
-      var id=location.hash.replace(/[^#a-zA-Z0-9_-]/g,'');
-      var el=id.length>1?document.querySelector(id):null;
-      if(el) setTimeout(function(){el.scrollIntoView();},0);
+    if(wasOpen && location.hash){
+      var id = location.hash.replace(/[^#a-zA-Z0-9_-]/g,'');
+      var el = id.length>1 ? document.querySelector(id) : null;
+      if(el) setTimeout(function(){el.scrollIntoView()},0);
     }
   }
 }
-window.addEventListener('hashchange',routeSport);
+window.addEventListener('hashchange', routeSport);
 routeSport();
 </script>
 </body>
