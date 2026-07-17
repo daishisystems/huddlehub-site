@@ -1,5 +1,51 @@
 # HuddleHub Deployment Checklist
 
+## Publishing an Update
+
+This site is **not** linked to git. Pushing to GitHub does **not** deploy.
+Every content change must be deployed manually.
+
+1. Put the edited HTML at `public/index.html`, next to the existing `public/assets/`.
+   Never edit or upload a lone `index.html` — every image is a relative
+   `assets/images/...` path, so an HTML file on its own shows all images broken.
+2. Preview locally with images intact: `npm run preview` → http://localhost:5173
+3. Deploy the **whole `public` folder** (HTML + assets together):
+
+   ```sh
+   cd public
+   zip -r -X /tmp/hh_deploy.zip index.html assets robots.txt sitemap.xml
+   TOKEN=$(python3 -c "import json;d=json.load(open('$HOME/Library/Preferences/netlify/config.json'));print(next(iter(d['users'].values()))['auth']['token'])")
+   curl -X POST "https://api.netlify.com/api/v1/sites/09b74ab5-0c7f-450d-bd96-25f3cb0b6d19/deploys" \
+     -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/zip" \
+     --data-binary @/tmp/hh_deploy.zip
+   ```
+
+   Poll `GET /api/v1/deploys/<deploy_id>` until `state` is `ready`.
+4. Verify on the live domain — not just locally:
+   - every referenced image returns 200
+   - the Kaspersky script is absent
+   - both forms still appear under `GET /api/v1/sites/<site_id>/forms`
+
+## Reviewing an Edited Page From Juliette
+
+She edits by saving the page through her browser ("Save As"). That reliably
+introduces the following, all of which must be fixed before deploying:
+
+- **Kaspersky script** injected into `<head>`
+  (`<script src="https://gc.kis.v2.scr.kaspersky-labs.com/...">`) — strip it.
+- **The entire `<style>` block duplicated.** Diff the two copies before deleting
+  one; they are not always identical, and the *first* copy has held rules the
+  second was missing.
+- **Whole sections silently dropped**, leaving dead links (e.g. the Cub Hub
+  Toddlers/Pre-Schoolers detail pages). Check every `href="#..."` resolves to an
+  existing `id="..."`.
+- **Copy that contradicts itself** where only half an edit landed (e.g. hero said
+  "5 sports codes", body still said 6). Grep for figures that appear twice.
+
+Not a real problem: garbled characters (`â€"`, `Â·`) when the file is pasted into
+a chat or viewer are a **paste artifact**. Check the file on disk with
+`file -I` first — it is normally valid UTF-8. Do not "fix" the encoding.
+
 ## Account Safety
 
 - Change the GoDaddy and Netlify passwords that were sent over email.
