@@ -5,3 +5,9 @@ build/
 .netlify/
 *.log
 
+
+# Large media deployed straight to Netlify (exceeds GitHub 100MB limit)
+public/assets/videos/
+
+# Local staging scratch
+.staged-*.html

@@ -46,6 +46,18 @@ Not a real problem: garbled characters (`â€"`, `Â·`) when the file is paste
 a chat or viewer are a **paste artifact**. Check the file on disk with
 `file -I` first — it is normally valid UTF-8. Do not "fix" the encoding.
 
+## Weekly "This Week" Video
+
+The homepage `#video` slot plays `public/assets/videos/this-week.mp4`
+(`<video preload="metadata">`, so the page shows a poster and only streams the
+clip when a visitor hits play). To swap the weekly reel: replace that file with
+the new mp4 (same name) and redeploy the `public` folder.
+
+The video is **git-ignored** — it exceeds GitHub's 100 MB limit, so it lives only
+locally and on Netlify, never in the repo. Keep a copy; a fresh clone won't have
+it. Reels also run heavy (the first was ~114 MB); compress to ~10-20 MB with
+ffmpeg (`-vcodec libx264 -crf 28 -vf scale=-2:1280`) before dropping in when you can.
+
 ## Account Safety
 
 - Change the GoDaddy and Netlify passwords that were sent over email.
