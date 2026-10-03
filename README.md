@@ -21,10 +21,33 @@ npm run preview
 Then open:
 
 ```text
-http://localhost:5173
+http://127.0.0.1:5173
 ```
 
-You can also run the VS Code task named `Preview HuddleHub site`.
+The preview binds only to `127.0.0.1`. Its forms simulate a successful submission
+and save test records to `/tmp/huddlehub-local-submissions.jsonl`, outside the
+repository. **They do not submit externally or deliver email.** Use dummy details
+when testing. Genuine form delivery and notifications can only be verified on a
+Netlify preview or deployment.
+
+The local server accepts `POST /` for `term4-registration`, with a URL-encoded
+body up to 64 KB. Inspect test records
+at `http://127.0.0.1:5173/__preview/submissions`.
+
+To simulate a failed booking, run the following once, then submit a form:
+
+```sh
+curl -X POST http://127.0.0.1:5173/__preview/fail-next
+```
+
+The next valid form submission returns HTTP 503 without saving a record; following
+submissions work normally. To test the sending state, or use a different port:
+
+```sh
+npm run preview -- --delay-post 3 --port 5174
+```
+
+Run the preview server checks with `python3 -m unittest discover -s tests`.
 
 ## Netlify
 

@@ -4,8 +4,10 @@
   "private": true,
   "description": "Static website for HuddleHub.",
   "scripts": {
-    "start": "python3 -m http.server 5173 -d public",
-    "preview": "python3 -m http.server 5173 -d public",
+    "start": "python3 scripts/preview.py",
+    "preview": "python3 scripts/preview.py",
+    "test": "node --test tests/booking.test.cjs && python3 -m unittest discover -s tests",
+    "prepare:deploy": "python3 scripts/prepare_deploy.py",
     "check:size": "du -sh public/index.html"
   }
 }

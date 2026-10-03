@@ -1,91 +1,112 @@
 # HuddleHub Deployment Checklist
 
-## Publishing an Update
+## Current Term 4 release
 
-This site is **not** linked to git. Pushing to GitHub does **not** deploy.
-Every content change must be deployed manually.
+This is a static HTML site on the existing Netlify site
+`09b74ab5-0c7f-450d-bd96-25f3cb0b6d19`, serving
+`https://www.huddlehub.co.za`. Netlify publishes `public` with no build command.
+The repository is **not linked to automatic deployment**: pushing to GitHub does
+not update the live site.
 
-1. Put the edited HTML at `public/index.html`, next to the existing `public/assets/`.
-   Never edit or upload a lone `index.html` — every image is a relative
-   `assets/images/...` path, so an HTML file on its own shows all images broken.
-2. Preview locally with images intact: `npm run preview` → http://localhost:5173
-3. Deploy the **whole `public` folder** (HTML + assets together):
+The current page uses one Netlify form, `term4-registration`. Its static fields
+are `form-name`, `parent-name`, `phone`, `email`, `children-and-groups`, `message`
+and the `bot-field` honeypot. Cub Hub interest and coaching enquiries use email
+links in this version; the previous supplementary forms are not part of this
+page.
 
-   ```sh
-   cd public
-   zip -r -X /tmp/hh_deploy.zip index.html assets robots.txt sitemap.xml
-   TOKEN=$(python3 -c "import json;d=json.load(open('$HOME/Library/Preferences/netlify/config.json'));print(next(iter(d['users'].values()))['auth']['token'])")
-   curl -X POST "https://api.netlify.com/api/v1/sites/09b74ab5-0c7f-450d-bd96-25f3cb0b6d19/deploys" \
-     -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/zip" \
-     --data-binary @/tmp/hh_deploy.zip
-   ```
+## Local review and deployment preparation
 
-   Poll `GET /api/v1/deploys/<deploy_id>` until `state` is `ready`.
-4. Verify on the live domain — not just locally:
-   - every referenced image returns 200
-   - the Kaspersky script is absent
-   - both forms still appear under `GET /api/v1/sites/<site_id>/forms`
+1. Run `npm run preview` and review `http://127.0.0.1:5173` on desktop and phone
+   widths. Check the timetable, prices, dates, navigation, coach images, both
+   videos and booking flow with dummy details. The hero uses
+   `assets/videos/term4-hero.mp4`; the existing highlights clip remains
+   `assets/videos/this-week.mp4`. Confirm each clip plays and can be sought.
+2. Run `npm test`. This runs the booking logic tests, local receiver tests and
+   deployment validation tests without external dependencies.
+3. Remember that local submissions are **simulated**: they are recorded only in
+   `/tmp/huddlehub-local-submissions.jsonl`. Nothing goes to Netlify and no email
+   is delivered. The local preview cannot prove genuine delivery or notification
+   settings.
+4. After the page review and final edits, run `npm run prepare:deploy`.
+   Preparation checks referenced local HTML, CSS, scripts, fonts, images and
+   video files; hash anchors; and the static Netlify form definition. It creates:
+   - `/tmp/huddlehub-term4-deploy.zip`: the complete `public` folder, with
+     `index.html` at the archive root.
+   - `/tmp/huddlehub-term4-manifest.json`: the exact uploaded filenames, byte
+     counts and SHA256 hashes, plus the archive hash and validation summary.
+5. Re-run preparation after any change to `public`. Upload the freshly prepared
+   archive only when deployment is authorized. Preparation itself does not
+   contact Netlify or deploy anything.
 
-## Reviewing an Edited Page From Juliette
+The archive includes files ignored by Git, including both
+`assets/videos/term4-hero.mp4` and `assets/videos/this-week.mp4`. It excludes operating-system junk and local
+scratch files such as `.DS_Store`, `._*`, `__pycache__`, `.env*` and temporary
+editor files. Never upload `index.html` alone: its assets must travel with it.
 
-She edits by saving the page through her browser ("Save As"). That reliably
-introduces the following, all of which must be fixed before deploying:
+## Authorized upload and live verification
 
-- **Kaspersky script** injected into `<head>`
-  (`<script src="https://gc.kis.v2.scr.kaspersky-labs.com/...">`) — strip it.
-- **The entire `<style>` block duplicated.** Diff the two copies before deleting
-  one; they are not always identical, and the *first* copy has held rules the
-  second was missing.
-- **Whole sections silently dropped**, leaving dead links (e.g. the Cub Hub
-  Toddlers/Pre-Schoolers detail pages). Check every `href="#..."` resolves to an
-  existing `id="..."`.
-- **Copy that contradicts itself** where only half an edit landed (e.g. hero said
-  "5 sports codes", body still said 6). Grep for figures that appear twice.
+Use the existing Netlify site's authenticated deployment flow to upload
+`/tmp/huddlehub-term4-deploy.zip`. Keep authentication in the existing account
+configuration; do not copy credentials into source files, logs or this document.
+Wait for the resulting deployment state to become `ready`.
 
-Not a real problem: garbled characters (`â€"`, `Â·`) when the file is pasted into
-a chat or viewer are a **paste artifact**. Check the file on disk with
-`file -I` first — it is normally valid UTF-8. Do not "fix" the encoding.
+Verify on its Netlify preview URL or the live domain:
 
-## Weekly "This Week" Video
+- The HTML, CSS, scripts, fonts, images and both MP4s return successfully. Play
+  and seek the new hero clip and the retained highlights clip separately.
+- The new timetable, dates and prices appear, and phone navigation works.
+- Netlify recognizes **`term4-registration`** and all its expected fields. Prior
+  historical form names may remain in the dashboard; they do not prove that the
+  new form was detected.
+- A clearly labelled test booking reaches the Netlify submission dashboard with
+  the parent, every child and every selected group intact.
+- Configure or confirm notifications for this new form and verify that the
+  expected notification reaches its intended destination. This remote check is
+  required to claim genuine form and email delivery are working.
+- Metadata, canonical URL and social sharing image still point to the production
+  site, and the local-preview notice is absent.
 
-The homepage `#video` slot plays `public/assets/videos/this-week.mp4`
-(`<video preload="metadata">`, so the page shows a poster and only streams the
-clip when a visitor hits play). To swap the weekly reel: replace that file with
-the new mp4 (same name) and redeploy the `public` folder.
+## Rollback
 
-The video is **git-ignored** — it exceeds GitHub's 100 MB limit, so it lives only
-locally and on Netlify, never in the repo. Keep a copy; a fresh clone won't have
-it. Reels also run heavy (the first was ~114 MB); compress to ~10-20 MB with
-ffmpeg (`-vcodec libx264 -crf 28 -vf scale=-2:1280`) before dropping in when you can.
+Before uploading, retain the previous Netlify deploy ID and a complete local
+backup of the prior `public` folder, including its ignored video. If the release
+has a material issue, restore the previous published Netlify deploy or redeploy
+that complete backup. A Git checkout alone is not a sufficient media backup.
 
-## Account Safety
+## Video files
 
-- Change the GoDaddy and Netlify passwords that were sent over email.
-- Enable two-factor authentication on both accounts.
-- Store shared credentials in a password manager instead of email or chat.
+The newly supplied Term 4 video uses `public/assets/videos/term4-hero.mp4` in the
+hero position previously occupied by a team image. The existing highlights
+video stays at `public/assets/videos/this-week.mp4` and must retain its current
+contents. These are two distinct clips, not replacements for one another.
 
-## Website Cleanup
+The video directory is Git-ignored and the existing highlights clip is
+approximately 114 MB. Keep separate copies of both MP4s. A fresh clone will not
+contain them, and preparation will fail if a referenced video is missing. For
+future video updates, re-run local playback and seeking checks, `npm test` and
+`npm run prepare:deploy` after changing the intended clip.
 
-- Done: move embedded base64 images out of `public/index.html` into `public/assets/images/`.
-- Done: remove public-facing image upload controls from the page.
-- Done: replace fake form submit handlers with real Netlify Forms.
-- Done: add meta description, social share image, favicon, and canonical URL.
-- Done: remove duplicate `Venue & Times` links.
-- Restrict the Google Maps API key to the final production domain.
-- Add privacy, POPIA, safeguarding, cancellation, and refund copy.
+## Historical browser-saved page issues
 
-## Netlify Setup
+Earlier browser-saved page updates introduced injected Kaspersky scripts,
+duplicated style blocks, missing programme sections and contradictory copy.
+Those observations describe earlier inputs, not the current Term 4 export.
+For future incoming files, inspect them before integrating edits and do not
+publish a browser export or JavaScript bundle directly. The current preparation
+checks cover missing assets and dead section anchors; visual and copy review
+still matter.
 
-- Create a new Netlify site from this project.
-- Set publish directory to `public`.
-- Leave build command blank.
-- Add `huddlehub.co.za` and `www.huddlehub.co.za` under domain management.
-- Enable HTTPS after DNS has propagated.
+Apparent garbled characters in pasted previews are not proof of a file encoding
+problem. Inspect the actual UTF-8 file before changing its encoding.
 
-## GoDaddy DNS
+## Account and DNS continuity
 
-- Back up existing DNS records before changing anything.
-- Preserve all email records: MX, SPF, DKIM, and DMARC.
-- Point `www` to the Netlify site URL with a CNAME record.
-- Point the root domain to Netlify using the record Netlify shows in domain setup.
-- Wait for propagation, which can take up to 48 hours.
+- Use the existing Netlify site and domain configuration; this update does not
+  require creating a new site or changing DNS.
+- Keep account credentials in a password manager and use two-factor
+  authentication. Change any credentials that were previously shared by email.
+- Before any separately authorized DNS change, back up the current records and
+  preserve all email records: MX, SPF, DKIM and DMARC.
+- Keep `www` pointed at the site's configured Netlify target, and follow
+  Netlify's current instructions for the root domain. Allow for DNS propagation
+  before judging a change and confirm HTTPS afterward.
