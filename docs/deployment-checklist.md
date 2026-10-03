@@ -8,6 +8,10 @@ This is a static HTML site on the existing Netlify site
 The repository is **not linked to automatic deployment**: pushing to GitHub does
 not update the live site.
 
+Because the upload contains only `public`, Netlify never reads the root
+`netlify.toml`. Response headers are served from `public/_headers`; keep it in
+sync with the `[[headers]]` block in `netlify.toml`.
+
 The current page uses one Netlify form, `term4-registration`. Its static fields
 are `form-name`, `parent-name`, `phone`, `email`, `children-and-groups`, `message`
 and the `bot-field` honeypot. Cub Hub interest and coaching enquiries use email

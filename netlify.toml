@@ -2,6 +2,8 @@
   publish = "public"
   command = ""
 
+# Manual zip deploys upload only public/, so Netlify never reads this file.
+# The live headers come from public/_headers; keep the two in sync.
 [[headers]]
   for = "/*"
   [headers.values]
